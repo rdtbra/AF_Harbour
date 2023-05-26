@@ -1,0 +1,32 @@
+#
+# $Id: hbgt.hbp 16210 2011-02-05 10:05:46Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbgt.hbx
+
+hbgt.hbx
+
+asciisgt.c
+ascposgt.c
+atdiff.c
+chareven.c
+charmixg.c
+charodd.c
+chrcount.c
+chrfirst.c
+chrtotal.c
+strasint.c
+strcount.c
+strcspn.c
+strdiffg.c
+strexpan.c
+strleft.c
+strpbrk.c
+strright.c

@@ -1,0 +1,9 @@
+#
+# $Id: hbssls.hbp 16239 2011-02-07 16:21:29Z vszakats $
+#
+
+hbssl.hbm
+
+-stop{!allwin|hbdyn}
+
+{allwin}-cflag=-DHB_OPENSSL_STATIC

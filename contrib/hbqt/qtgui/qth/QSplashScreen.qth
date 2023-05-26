@@ -1,0 +1,48 @@
+/*
+ * $Id: QSplashScreen.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QSplashScreen>
+
+
+/*
+ * QSplashScreen ( const QPixmap & pixmap = QPixmap(), Qt::WindowFlags f = 0 )
+ * QSplashScreen ( QWidget * parent, const QPixmap & pixmap = QPixmap(), Qt::WindowFlags f = 0 )
+ * virtual ~QSplashScreen ()
+ */
+HB_FUNC( QT_QSPLASHSCREEN )
+{
+   __HB_RETPTRGC__( new QSplashScreen( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+void finish ( QWidget * mainWin )
+const QPixmap pixmap () const
+void repaint ()
+void setPixmap ( const QPixmap & pixmap )
+</PROTOS>
+
+<SLOTS>
+void clearMessage ()
+void showMessage ( const QString & message, int alignment = Qt::AlignLeft, const QColor & color = Qt::black )
+</SLOTS>
+
+<SIGNALS>
+void messageChanged ( const QString & message )
+</SIGNALS>

@@ -1,0 +1,7 @@
+#
+# $Id: gtqtcs.hbp 16567 2011-04-12 05:49:07Z vouchcac $
+#
+
+../hbqt_commons.hbm
+
+gtqtc.hbm

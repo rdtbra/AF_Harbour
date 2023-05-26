@@ -1,0 +1,21 @@
+#
+# $Id: oohg.hbc 15779 2010-11-08 00:24:36Z vszakats $
+#
+
+# Copy this file to oohg root dir and include it in hbmk2
+# command line to build an app:
+# > hbmk2 test.prg C:\oohg\oohg.hbc
+
+{win}incpaths=include
+{win}libpaths=lib
+
+{win}gt=gtgui
+
+# core
+{win}libs=oohg hbprinter miniprint
+
+# core (binary only)
+{bcc}hbcs=hbcomm
+
+# Harbour contribs
+{win}hbcs=hbwin

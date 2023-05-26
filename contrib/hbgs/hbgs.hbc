@@ -1,0 +1,12 @@
+#
+# $Id: hbgs.hbc 16436 2011-03-07 14:07:20Z vszakats $
+#
+
+skip={dos|wce}
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+
+libs=gs
+#{darwin}frameworks=Ghostscript
+
+{darwin}libpaths=/opt/local/lib

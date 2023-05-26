@@ -1,0 +1,51 @@
+/*
+ * $Id: QWidgetAction.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QAction
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QWidgetAction>
+
+
+/*
+ * QWidgetAction ( QObject * parent )
+ * virtual ~QWidgetAction ()
+ */
+HB_FUNC( QT_QWIDGETACTION )
+{
+   __HB_RETPTRGC__( new QWidgetAction( hbqt_par_QObject( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QWidget * defaultWidget () const
+void releaseWidget ( QWidget * widget )
+QWidget * requestWidget ( QWidget * parent )
+void setDefaultWidget ( QWidget * widget )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

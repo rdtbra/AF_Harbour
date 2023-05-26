@@ -1,0 +1,61 @@
+/*
+ * $Id: QNetworkRequest.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = no
+Inherits   = 
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtNetwork/QNetworkRequest>
+
+
+/* QNetworkRequest ( const QUrl & url = QUrl() )
+ * QNetworkRequest ( const QNetworkRequest & other )
+ * ~QNetworkRequest ()
+ */
+HB_FUNC( QT_QNETWORKREQUEST )
+{
+   __HB_RETPTRGC__( new QNetworkRequest() );
+}
+</CODE>
+
+<ENUMS>
+enum Attribute { HttpStatusCodeAttribute, HttpReasonPhraseAttribute, RedirectionTargetAttribute, ConnectionEncryptedAttribute, ..., UserMax }
+enum CacheLoadControl { AlwaysNetwork, PreferNetwork, PreferCache, AlwaysCache }
+enum KnownHeaders { ContentTypeHeader, ContentLengthHeader, LocationHeader, LastModifiedHeader, CookieHeader, SetCookieHeader }
+</ENUMS>
+
+<PROTOS>
+QVariant attribute ( Attribute code, const QVariant & defaultValue = QVariant() ) const
+bool hasRawHeader ( const QByteArray & headerName ) const
+QVariant header ( KnownHeaders header ) const
+QByteArray rawHeader ( const QByteArray & headerName ) const
+QList<QByteArray> rawHeaderList () const
+void setAttribute ( Attribute code, const QVariant & value )
+void setHeader ( KnownHeaders header, const QVariant & value )
+void setRawHeader ( const QByteArray & headerName, const QByteArray & headerValue )
+// void setSslConfiguration ( const QSslConfiguration & config )
+void setUrl ( const QUrl & url )
+// QSslConfiguration sslConfiguration () const
+QUrl url () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

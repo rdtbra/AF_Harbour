@@ -1,0 +1,26 @@
+#
+# $Id: hblzf.hbp 16212 2011-02-05 11:52:16Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-depkeyhead=lzf:lzf.h
+-depcontrol=lzf:local{HB_BUILD_3RDEXT='no'}
+-depcontrol=lzf:${HB_WITH_LZF}
+-depincpath=lzf:/usr/include
+-depincpathlocal=lzf:3rd/liblzf
+-depfinish=lzf
+
+-instfile=inc:hblzf.ch
+-instfile=inc:hblzf.hbx
+
+hblzf.hbx
+
+core.c
+
+3rd/liblzf/lzf.hbc{HBMK_HAS_LZF_LOCAL}

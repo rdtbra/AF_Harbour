@@ -1,0 +1,25 @@
+#
+# $Id: hbqtwebkit.hbm 16207 2011-02-05 09:16:09Z vszakats $
+#
+
+-i.
+
+qth/filelist.hbm
+
+hbqtwebkit.hbx
+
+hbqt_init.cpp
+
+../qtcore/hbqtcore.hbc
+../qtgui/hbqtgui.hbc
+../qtnetwork/hbqtnetwork.hbc
+
+-deppkgname=qtwebkit:QtWebKit
+-depkeyhead=qtwebkit:QtWebKit/QWebView
+-depcontrol=qtwebkit:${HB_WITH_QT}
+{!darwin}-depincpath=qtwebkit:/usr/include/qt4
+{!darwin}-depincpath=qtwebkit:/usr/lib/qt4/include
+{!darwin}-depincpath=qtwebkit:/usr/include
+{bsd}-depincpath=qt:/usr/local/include/qt4
+{darwin}-depincpath=qtwebkit:/Developer/qt/include
+{darwin}-depincpath=qtwebkit:/Library/Frameworks

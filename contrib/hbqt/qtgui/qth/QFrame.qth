@@ -1,0 +1,53 @@
+/*
+ * $Id: QFrame.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent, nFlags
+</CLASS>
+
+<CODE>
+#include <QtGui/QFrame>
+
+
+/*
+ * QFrame ( QWidget * parent = 0, Qt::WindowFlags f = 0 )
+ * ~QFrame ()
+ */
+HB_FUNC( QT_QFRAME )
+{
+   __HB_RETPTRGC__( new QFrame( hbqt_par_QWidget( 1 ), ( Qt::WindowFlags ) hb_parni( 2 ) ) );   
+}
+</CODE>
+
+<ENUMS>
+enum Shadow { Plain, Raised, Sunken }
+enum Shape { NoFrame, Box, Panel, StyledPanel, ..., WinPanel }
+enum StyleMask { Shadow_Mask, Shape_Mask }
+</ENUMS>
+
+<PROTOS>
+QRect frameRect () const
+Shadow frameShadow () const
+Shape frameShape () const
+int frameStyle () const
+int frameWidth () const
+int lineWidth () const
+int midLineWidth () const
+void setFrameRect ( const QRect & )
+void setFrameShadow ( Shadow )
+void setFrameShape ( Shape )
+void setFrameStyle ( int style )
+void setLineWidth ( int )
+void setMidLineWidth ( int )
+</PROTOS>

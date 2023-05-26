@@ -1,0 +1,15 @@
+#
+# $Id: rddbm.hbp 16006 2011-01-08 12:28:01Z druzus $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+bmdbfx.c
+bmdbfcdx.prg
+bmdbfnsx.prg
+bmdbfntx.prg

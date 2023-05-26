@@ -1,0 +1,72 @@
+/*
+ * $Id: QColorDialog.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+
+Inherit  = QDialog
+New      = pParent
+Calls    = QT_QColorDialog
+
+</CLASS>
+
+<CODE>
+#include <QtGui/QColorDialog>
+
+/*
+ * QColorDialog ( QWidget * parent = 0 )
+ * QColorDialog ( const QColor & initial, QWidget * parent = 0 )
+ * ~QColorDialog ()
+ */
+HB_FUNC( QT_QCOLORDIALOG )
+{
+   if( hb_pcount() >= 1 && HB_ISNUM( 1 ) )
+   {
+      __HB_RETPTRGC__( new QColorDialog( hb_parni( 1 ), hbqt_par_QWidget( 2 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QColorDialog( hbqt_par_QWidget( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+enum ColorDialogOption { ShowAlphaChannel, NoButtons, DontUseNativeDialog }
+flags ColorDialogOptions
+</ENUMS>
+
+<PROTOS>
+QColor currentColor () const
+void open ()
+//void open ( QObject * receiver, const char * member )
+ColorDialogOptions options () const
+QColor selectedColor () const
+void setCurrentColor ( const QColor & color )
+void setOption ( ColorDialogOption option, bool on = true )
+void setOptions ( ColorDialogOptions options )
+virtual void setVisible ( bool visible )
+bool testOption ( ColorDialogOption option ) const
+
+
+QRgb customColor ( int index )
+int customCount ()
+QColor getColor ( const QColor & initial, QWidget * parent, const QString & title, ColorDialogOptions options = 0 )
+QColor getColor ( const QColor & initial = Qt::white, QWidget * parent = 0 )
+void setCustomColor ( int index, QRgb color )
+void setStandardColor ( int index, QRgb color )
+</PROTOS>
+
+<SIGNALS>
+void colorSelected ( const QColor & color )
+void currentColorChanged ( const QColor & color )
+</SIGNALS>

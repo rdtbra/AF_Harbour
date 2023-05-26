@@ -1,0 +1,53 @@
+/*
+ * $Id: QGroupBox.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QGroupBox>
+
+
+/*
+ * QGroupBox ( QWidget * parent = 0 )
+ * QGroupBox ( const QString & title, QWidget * parent = 0 )
+ * ~QGroupBox ()
+ */
+HB_FUNC( QT_QGROUPBOX )
+{
+   __HB_RETPTRGC__( new QGroupBox( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+Qt::Alignment alignment () const
+bool isCheckable () const
+bool isChecked () const
+bool isFlat () const
+void setAlignment ( int alignment )
+void setCheckable ( bool checkable )
+void setFlat ( bool flat )
+void setTitle ( const QString & title )
+QString title () const
+</PROTOS>
+
+<SLOTS>
+void setChecked ( bool checked )
+</SLOTS>
+
+<SIGNALS>
+void clicked ( bool checked = false )
+void toggled ( bool on )
+</SIGNALS>

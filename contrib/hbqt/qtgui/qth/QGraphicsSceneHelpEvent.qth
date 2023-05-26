@@ -1,0 +1,53 @@
+/*
+ * $Id: QGraphicsSceneHelpEvent.qth 16418 2011-03-03 01:22:51Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherit  = QGraphicsSceneEvent
+Type     = 
+New      = 
+Constructor = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsSceneHelpEvent>
+#include <QtCore/QPointF>
+#include <QtCore/QPoint>
+
+
+/*
+ * QGraphicsSceneHelpEvent ()
+ * ~QGraphicsSceneHelpEvent ()
+ */
+HB_FUNC( QT_QGRAPHICSSCENEHELPEVENT )
+{
+   __HB_RETPTRGC__( new QGraphicsSceneHelpEvent() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QPointF scenePos () const
+QPoint screenPos () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

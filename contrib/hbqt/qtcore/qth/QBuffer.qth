@@ -1,0 +1,65 @@
+/*
+ * $Id: QBuffer.qth 16548 2011-04-07 23:13:20Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  =
+Inherits = QIODevice
+Type     =
+New      =
+</CLASS>
+
+<SUBCLASS>
+</SUBCLASS>
+
+<DOC>
+</DOC>
+
+<CODE>
+#include <QtCore/QBuffer>
+
+
+/*
+ * QBuffer ( QObject * parent = 0 )
+ * QBuffer ( QByteArray * byteArray, QObject * parent = 0 )
+ * ~QBuffer ()
+ */
+HB_FUNC( QT_QBUFFER )
+{
+   if( hb_pcount() >= 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QBuffer( hbqt_par_QByteArray( 1 ), HB_ISOBJECT( 2 ) ? hbqt_par_QObject( 2 ) : 0 ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QBuffer( HB_ISOBJECT( 1 ) ? hbqt_par_QObject( 1 ) : 0 ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QByteArray & buffer ()
+//const QByteArray & buffer () const
+const QByteArray & data () const
+void setBuffer ( QByteArray * byteArray )
+void setData ( const char * data, int size )
+void setData ( const QByteArray & data )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

@@ -1,0 +1,51 @@
+/*
+ * $Id: QTextListFormat.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = no
+Inherits   = QTextFormat
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QTextListFormat>
+
+
+/* QTextListFormat ()
+ * 
+ */
+HB_FUNC( QT_QTEXTLISTFORMAT )
+{
+   __HB_RETPTRGC__( new QTextListFormat() );
+}
+</CODE>
+
+<ENUMS>
+enum Style { ListDisc, ListCircle, ListSquare, ListDecimal, ListLowerAlpha, ListUpperAlpha }
+</ENUMS>
+
+<PROTOS>
+int indent () const
+bool isValid () const
+void setIndent ( int indentation )
+void setStyle ( Style style )
+Style style () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

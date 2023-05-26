@@ -1,0 +1,23 @@
+/*
+ * $Id: pickday.txt 15102 2010-07-14 12:48:39Z vszakats $
+ */
+
+/*  $DOC$
+ *  $FUNCNAME$
+ *     FT_PICKDAY()
+ *  $CATEGORY$
+ *     Menus/Prompts
+ *  $ONELINER$
+ *     Picklist of days of week
+ *  $SYNTAX$
+ *     FT_PICKDAY() -> cDayOfWeek
+ *  $ARGUMENTS$
+ *     None
+ *  $RETURNS$
+ *     Character string containing day of week
+ *  $DESCRIPTION$
+ *     This function is ideal if you need the user to select a day.
+ *  $EXAMPLES$
+ *     mday := FT_PICKDAY()
+ *  $END$
+ */

@@ -1,0 +1,16 @@
+#
+# $Id: wvtqt.hbp 15651 2010-10-20 05:37:07Z druzus $
+#
+
+-es2
+-w3
+
+-gtwvt
+-mt
+
+-d__WITH_WVT__
+
+../hbxbp.hbc
+
+wvtqt.prg
+dialogqt.prg

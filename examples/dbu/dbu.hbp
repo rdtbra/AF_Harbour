@@ -1,0 +1,13 @@
+#
+# $Id: dbu.hbp 11672 2009-07-08 16:36:29Z druzus $
+#
+
+dbu.prg
+dbucopy.prg
+dbuedit.prg
+dbuhelp.prg
+dbuindx.prg
+dbunet.prg
+dbustru.prg
+dbuutil.prg
+dbuview.prg

@@ -1,0 +1,7 @@
+#
+# $Id: terminal.hbc 11700 2009-07-10 13:56:56Z vszakats $
+#
+
+{win}libs=hbwin
+libs=hbct
+mt=yes

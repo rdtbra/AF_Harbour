@@ -1,0 +1,49 @@
+/*
+ * $Id: QWidgetItem.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QLayoutItem
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QWidgetItem>
+
+
+/*
+ * QWidgetItem ( QWidget * widget )
+ */
+HB_FUNC( QT_QWIDGETITEM )
+{
+   __HB_RETPTRGC__( new QWidgetItem( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+virtual bool isEmpty () const
+virtual QWidget * widget ()
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

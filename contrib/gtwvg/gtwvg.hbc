@@ -1,0 +1,14 @@
+#
+# $Id: gtwvg.hbc 16259 2011-02-09 15:58:45Z vszakats $
+#
+
+skip={!win}
+
+incpaths=.
+
+gt=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+
+libs=../hbwin/hbwin.hbc
+
+gui=yes
+mt=yes

@@ -1,0 +1,78 @@
+/*
+ * $Id: QDropEvent.qth 16683 2011-04-27 10:00:24Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QEvent
+Type     = Core
+New      =
+Constructor = no
+</CLASS>
+
+<CODE>
+#include <QtGui/QDropEvent>
+#include <QtCore/QMimeData>
+
+
+/*
+ * QDropEvent ( const QPoint & pos, Qt::DropActions actions, const QMimeData * data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Type type = Drop )
+ */
+HB_FUNC( QT_QDROPEVENT )
+{
+   if( hb_pcount() >= 5 && HB_ISOBJECT( 1 ) && HB_ISNUM( 2 ) && HB_ISOBJECT( 3 ) && HB_ISNUM( 4 ) && HB_ISNUM( 5 ) )
+   {
+      __HB_RETPTRGC__( new QDropEvent( *hbqt_par_QPoint( 1 ), ( Qt::DropActions ) hb_parni( 2 ), hbqt_par_QMimeData( 3 ), ( Qt::MouseButtons ) hb_parni( 4 ), ( Qt::KeyboardModifiers ) hb_parni( 5 ), ( QEvent::Type ) ( HB_ISNUM( 6 ) ? hb_parni( 6 ) : QEvent::Drop ) ) );
+   }
+   else if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QDropEvent( *hbqt_par_QDropEvent( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+void acceptProposedAction ()
+Qt::DropAction dropAction () const
+Qt::KeyboardModifiers keyboardModifiers () const
+
+# This function is OK if called as line below, but do not found a way
+# how to construct dynamically - no separate keyword ???
+#
+const QMimeData * mimeData () const{
+   QDropEvent * p = ( QDropEvent * ) hbqt_par_ptr( 0 );
+   if( p )
+   {
+      hbqt_create_objectGC( hbqt_gcAllocate_QMimeData( ( void* ) p->mimeData(), false ), "hb_QMimeData" );
+   }
+}
+#
+#
+Qt::MouseButtons mouseButtons () const
+const QPoint & pos () const
+Qt::DropActions possibleActions () const
+Qt::DropAction proposedAction () const
+void setDropAction ( Qt::DropAction action )
+QWidget * source () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

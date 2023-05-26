@@ -1,0 +1,85 @@
+/*
+ * $Id: QMimeData.qth 16683 2011-04-27 10:00:24Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    =
+Inherits   = QObject
+Type       = Core
+New        =
+Destructor =
+</CLASS>
+
+<CODE>
+#include <QtCore/QMimeData>
+#include <QtCore/QStringList>
+#include <QtCore/QUrl>
+
+/* QMimeData ()
+ * ~QMimeData ()
+ */
+HB_FUNC( QT_QMIMEDATA )
+{
+   if( hb_pcount() == 0 )
+   {
+      __HB_RETPTRGC__( new QMimeData() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+void clear ()
+QVariant colorData () const
+QByteArray data ( const QString & mimeType ) const
+virtual QStringList formats () const
+bool hasColor () const
+virtual bool hasFormat ( const QString & mimeType ) const
+bool hasHtml () const
+bool hasImage () const
+bool hasText () const
+bool hasUrls () const
+QString html () const
+QVariant imageData () const
+void removeFormat ( const QString & mimeType )
+void setColorData ( const QVariant & color )
+void setData ( const QString & mimeType, const QByteArray & data )
+void setHtml ( const QString & html )
+void setImageData ( const QVariant & image )
+void setText ( const QString & text )
+void setUrls ( const QList<QUrl> & urls )
+QString text () const
+QList<QUrl> urls () const
+
+#          Harbour Callable Function Till QList<QUrl> is not resolved
+#
+QStringList * hbUrlList() const{
+   QMimeData * _mimedata = ( QMimeData * ) hbqt_par_ptr( 0 );
+   if( _mimedata )
+   {
+      QStringList strList;
+      foreach ( QUrl url, ( _mimedata )->urls() )
+      {
+         strList << ( QString ) url.toString().toAscii().data();
+      }
+      hbqt_create_objectGC( hbqt_gcAllocate_QStringList( new QStringList( strList ), true ), "hb_QStringList" );
+   }
+}
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

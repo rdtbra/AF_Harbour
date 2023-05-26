@@ -1,0 +1,54 @@
+/*
+ * $Id: QStyleOptionTitleBar.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QStyleOptionComplex
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QStyleOptionTitleBar>
+
+
+/*
+ * QStyleOptionTitleBar ()
+ * QStyleOptionTitleBar ( const QStyleOptionTitleBar & other )
+ */
+HB_FUNC( QT_QSTYLEOPTIONTITLEBAR )
+{
+   __HB_RETPTRGC__( new QStyleOptionTitleBar() );
+}
+</CODE>
+
+<ENUMS>
+enum StyleOptionType { Type }
+enum StyleOptionVersion { Version }
+</ENUMS>
+
+<PROTOS>
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+QIcon icon
+QString text
+Qt::WindowFlags titleBarFlags
+int titleBarState
+</VARIABLES>

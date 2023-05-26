@@ -1,0 +1,60 @@
+/*
+ * $Id: QWebHistoryItem.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = Core
+New      =
+folder   = qtwebkit
+</CLASS>
+
+<CODE>
+#include "hbqtgui.h"
+
+#include <QtWebKit/QWebHistoryItem>
+#include <QtCore/QVariant>
+
+
+/*
+ * QWebHistoryItem ( const QWebHistoryItem & other )
+ * ~QWebHistoryItem ()
+ */
+HB_FUNC( QT_QWEBHISTORYITEM )
+{
+   if( hb_pcount() == 1 && HB_ISPOINTER( 1 ) )
+   {
+      __HB_RETPTRGC__( new QWebHistoryItem( *hbqt_par_QWebHistoryItem( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QIcon icon () const
+bool isValid () const
+QDateTime lastVisited () const
+QUrl originalUrl () const
+void setUserData ( const QVariant & userData )
+QString title () const
+QUrl url () const
+QVariant userData () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

@@ -1,0 +1,55 @@
+/*
+ * $Id: QSpinBox.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractSpinBox
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QSpinBox>
+
+
+/*
+ * QSpinBox ( QWidget * parent = 0 )
+ */
+HB_FUNC( QT_QSPINBOX )
+{
+   __HB_RETPTRGC__( new QSpinBox( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+QString cleanText () const
+int maximum () const
+int minimum () const
+QString prefix () const
+void setMaximum ( int max )
+void setMinimum ( int min )
+void setPrefix ( const QString & prefix )
+void setRange ( int minimum, int maximum )
+void setSingleStep ( int val )
+void setSuffix ( const QString & suffix )
+int singleStep () const
+QString suffix () const
+int value () const
+</PROTOS>
+
+<SLOTS>
+void setValue ( int val )
+</SLOTS>
+
+<SIGNALS>
+void valueChanged ( int i )
+void valueChanged ( const QString & text )
+</SIGNALS>

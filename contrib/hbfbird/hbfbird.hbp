@@ -1,0 +1,32 @@
+#
+# $Id: hbfbird.hbp 16663 2011-04-25 20:34:20Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-stop{pocc64|poccarm}
+
+-depkeyhead=firebird:ibase.h
+-depcontrol=firebird:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=firebird:${HB_WITH_FIREBIRD}
+-depincpath=firebird:/usr/include
+-depincpath=firebird:/opt/firebird/include
+-depincpath=firebird:/Library/Frameworks/Firebird.framework/Headers
+-depimplibs=firebird:../bin/fbclient.dll{!(allgcc|allmsvc|allpocc)}
+-depimplibs=firebird:../lib/fbclient_ms.lib{allgcc|allmsvc|allpocc}
+-depimplibd=firebird:fbclient
+
+-instfile=inc:hbfbird.hbx
+
+# For FireBird headers
+-c=gnu90
+
+hbfbird.hbx
+
+firebird.c
+tfirebrd.prg

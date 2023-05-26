@@ -1,0 +1,12 @@
+#
+# $Id: hbqtcore.hbp 15486 2010-09-15 18:06:48Z vszakats $
+#
+
+../hbqt_common.hbm
+
+hbqtcore.hbm
+
+-instfile=inc:hbqtcore.ch
+-instfile=inc:hbqtcore.hbx
+
+hbqtcores.hbp

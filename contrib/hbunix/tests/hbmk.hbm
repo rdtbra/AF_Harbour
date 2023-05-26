@@ -1,0 +1,7 @@
+#
+# $Id: hbmk.hbm 16090 2011-01-21 15:32:46Z vszakats $
+#
+
+../hbunix.hbc
+
+-w3 -es2

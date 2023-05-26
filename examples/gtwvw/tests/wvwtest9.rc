@@ -1,0 +1,8 @@
+/*
+ * $Id: wvwtest9.rc 13358 2009-12-22 02:50:24Z vszakats $
+ */
+
+#define IDR_MANIFEST  1
+#define RT_MANIFEST  24
+
+IDR_MANIFEST RT_MANIFEST MOVEABLE PURE "wvwtest9.xml"

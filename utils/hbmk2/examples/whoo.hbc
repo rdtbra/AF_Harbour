@@ -1,0 +1,5 @@
+#
+# $Id: whoo.hbc 11155 2009-05-28 06:26:06Z vszakats $
+#
+
+{win}libs=whoo hbwhat

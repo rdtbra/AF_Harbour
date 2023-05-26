@@ -1,0 +1,7 @@
+#
+# $Id: oletst4.hbp 14643 2010-05-31 08:26:06Z druzus $
+#
+
+oletst4.prg
+
+-cflag={watcom}-6r

@@ -1,0 +1,23 @@
+#
+# $Id: hbcups.hbp 16233 2011-02-06 15:41:47Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-stop{win|wce|dos}
+
+-depkeyhead=cups:cups/cups.h
+-depcontrol=cups:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=cups:${HB_WITH_CUPS}
+-depincpath=cups:/usr/include
+
+-instfile=inc:hbcups.hbx
+
+hbcups.hbx
+
+core.c

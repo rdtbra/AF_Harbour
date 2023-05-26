@@ -1,0 +1,27 @@
+#
+# $Id: gtwvw.hbp 16868 2011-06-07 22:29:10Z vszakats $
+#
+
+-hblib
+-inc
+
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+-w3 -es2
+
+"-stop={!allwin|!x86}Skipped: '${hb_name}' only supported on win x86 platform."
+
+gtwvw.c
+wvwcheck.c
+wvwdraw.c
+wvwedit.c
+wvwfuncs.c
+wvwmenu.c
+wvwpush.c
+wvwstbar.c
+wvwtbar.c
+
+# NOTE: Has a huge number of warnings, which we don't want to see until fixed.
+-cpp=no
+# NOTE: Due to large quantity of unprecise code, it doesn't build in C++ mode.
+-warn=no

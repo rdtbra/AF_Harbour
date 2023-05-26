@@ -1,0 +1,51 @@
+/*
+ * $Id: QTextBlockGroup.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QTextObject
+Type     = Core
+New      = 
+Destructor = no
+Constructor = no
+</CLASS>
+
+<CODE>
+#include <QtGui/QTextBlockGroup>
+
+
+/*
+ * QTextBlockGroup ( QTextDocument * document )
+ */
+HB_FUNC( QT_QTEXTBLOCKGROUP )
+{
+   //__HB_RETPTRGC__( new QTextBlockGroup( hbqt_par_QTextDocument( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+//virtual void blockFormatChanged ( const QTextBlock & block )
+//virtual void blockInserted ( const QTextBlock & block )
+#
+//QList<QTextBlock> blockList () const
+#
+//virtual void blockRemoved ( const QTextBlock & block )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

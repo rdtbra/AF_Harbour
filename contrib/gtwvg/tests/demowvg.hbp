@@ -1,0 +1,24 @@
+#
+# $Id: demowvg.hbp 14956 2010-06-29 19:30:26Z vszakats $
+#
+
+-3rd=hbide_version=1.0
+-3rd=hbide_title=Demo&GTWVG
+-3rd=hbide_output=demowvg
+
+-inc
+-mt
+-w3
+-es2
+-gtwvg
+
+demowvg.prg
+wvgwvtclasses.prg
+wvgtbrowser.prg
+wvgutilities.prg
+wvgdyndialogs.prg
+wvgmodal.prg
+wvgcuigdialog.prg
+wvgxbp.prg
+wvgactivex.prg
+wvgqt.prg

@@ -1,0 +1,53 @@
+/*
+ * $Id: QTextItem.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = 
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QTextItem>
+
+
+/*
+ * QTextItem ()
+ *
+ */
+HB_FUNC( QT_QTEXTITEM )
+{
+   __HB_RETPTRGC__( new QTextItem() );
+}
+</CODE>
+
+<ENUMS>
+enum RenderFlag { RightToLeft, Overline, Underline, StrikeOut }
+flags RenderFlags
+</ENUMS>
+
+<PROTOS>
+qreal ascent () const
+qreal descent () const
+QFont font () const
+RenderFlags renderFlags () const
+QString text () const
+qreal width () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

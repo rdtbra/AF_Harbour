@@ -1,0 +1,16 @@
+#
+# $Id: hbqtdesigner.hbm 16207 2011-02-05 09:16:09Z vszakats $
+#
+
+-stop{symbian}
+
+-i.
+
+qth/filelist.hbm
+
+hbqtdesigner.hbx
+
+hbqt_init.cpp
+
+../qtcore/hbqtcore.hbc
+../qtgui/hbqtgui.hbc

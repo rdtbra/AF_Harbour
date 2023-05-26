@@ -1,0 +1,5 @@
+#
+# $Id: hbmemio.hbc 16259 2011-02-09 15:58:45Z vszakats $
+#
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}

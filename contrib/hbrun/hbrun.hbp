@@ -1,0 +1,50 @@
+#
+# $Id: hbrun.hbp 16784 2011-05-18 14:20:50Z vszakats $
+#
+
+-w3 -es2 -l
+-kmo
+
+-o${hb_name}
+
+-DHBRUN_WITH_HEADERS
+
+-head=dep
+
+-cflag=-Zm200{wce&allmsvc}
+
+# required by some plugins (f.e. netio management console)
+-mt
+
+hbrun.prg
+
+-request=__hbrun_extensions
+headers.prg
+plugins.prg
+pullext.prg
+
+-lhbpmcom{dos}
+
+# not using these together with .rc input, because some compilers (mingw)
+# do not support multiple .rc inputs
+#-icon={allwin}../../package/harb_win.ico
+#-icon={os2}../../package/harb_os2.ico
+hbrun.rc
+
+# Plugins
+
+-I../hbnetio/utils/hbnetio
+
+# Here comes the list of contribs linked in:
+# - Make sure to keep it in sync with pullext.prg.
+# - Do not add contribs which have external dependencies.
+#   (not in the public SVN that is)
+
+hbct.hbc
+hbxpp.hbc
+hbexpat.hbc
+hbmemio.hbc
+hbmzip.hbc
+hbnetio.hbc
+hbunix.hbc{unix}
+hbwin.hbc{allwin}

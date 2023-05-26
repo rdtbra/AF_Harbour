@@ -1,0 +1,41 @@
+/*
+ * $Id: hbmlzo.hbx 16676 2011-04-26 20:34:30Z vszakats $
+ */
+
+/* -------------------------------------------------------------------- */
+/* NOTE: You can add manual override which functions to include or      */
+/*       exclude from automatically generated EXTERNAL/DYNAMIC list.    */
+/*          Syntax: // HB_FUNC_INCLUDE <func>                           */
+/*                  // HB_FUNC_EXCLUDE <func>                           */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* WARNING: Automatically generated code below. DO NOT EDIT!            */
+/*          Regenerate using hbmk2 '-hbx=' option.                      */
+/* -------------------------------------------------------------------- */
+
+#ifndef __HBEXTERN_CH__HBMLZO__
+#define __HBEXTERN_CH__HBMLZO__
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBMLZO__ANNOUNCE )
+   ANNOUNCE __HBEXTERN__HBMLZO__
+#endif
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBMLZO__REQUEST )
+   #command DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+DYNAMIC HB_LZO1X_1_COMPRESS
+DYNAMIC HB_LZO1X_DECOMPRESS
+DYNAMIC HB_LZO1X_DECOMPRESS_SAFE
+DYNAMIC HB_LZO_COMPRESSBOUND
+DYNAMIC LZO_ADLER32
+DYNAMIC LZO_VERSION
+DYNAMIC LZO_VERSION_DATE
+DYNAMIC LZO_VERSION_STRING
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBMLZO__REQUEST )
+   #uncommand DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+#endif

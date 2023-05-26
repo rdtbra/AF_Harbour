@@ -1,0 +1,16 @@
+#
+# $Id: rddado.hbp 16868 2011-06-07 22:29:10Z vszakats $
+#
+
+-hblib
+-inc
+
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+-w3 -es2
+
+-stop{!win}
+
+-instfile=inc:adordd.ch
+
+adordd.prg

@@ -1,0 +1,8 @@
+#
+# $Id: hbi18n.hbp 16340 2011-02-20 12:50:36Z vszakats $
+#
+
+-q0 -w3 -es2 -kmo -l
+
+-nulrdd
+hbi18n.prg

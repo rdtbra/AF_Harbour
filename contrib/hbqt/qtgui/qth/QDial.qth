@@ -1,0 +1,44 @@
+/*
+ * $Id: QDial.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractSlider
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QDial>
+
+
+/*
+ * QDial ( QWidget * parent = 0 )
+ * ~QDial ()
+ */
+HB_FUNC( QT_QDIAL )
+{
+   __HB_RETPTRGC__( new QDial( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+int notchSize () const
+qreal notchTarget () const
+bool notchesVisible () const
+void setNotchTarget ( double target )
+bool wrapping () const
+</PROTOS>
+
+<SLOTS>
+void setNotchesVisible ( bool visible )
+void setWrapping ( bool on )
+</SLOTS>

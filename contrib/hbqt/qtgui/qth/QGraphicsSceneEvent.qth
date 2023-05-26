@@ -1,0 +1,53 @@
+/*
+ * $Id: QGraphicsSceneEvent.qth 16419 2011-03-03 05:45:53Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherit  = QEvent
+Type     = 
+New      = 
+Constructor =
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsSceneEvent>
+
+
+/*
+ * QGraphicsSceneEvent ()
+ * ~QGraphicsSceneEvent ()
+ */
+HB_FUNC( QT_QGRAPHICSSCENEEVENT )
+{
+   if( hb_pcount() == 1 && HB_ISNUM( 1 ) )
+   {
+      __HB_RETPTRGC__( new QGraphicsSceneEvent( ( QEvent::Type ) hb_parni( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QWidget * widget () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

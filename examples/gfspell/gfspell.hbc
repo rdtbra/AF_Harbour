@@ -1,0 +1,8 @@
+#
+# $Id: gfspell.hbc 14687 2010-06-04 11:08:35Z vszakats $
+#
+
+incpaths=.
+libpaths=lib/${hb_plat}/${hb_comp}
+
+libs=${hb_name}

@@ -1,0 +1,36 @@
+#
+# $Id: hbcairo.hbp 16233 2011-02-06 15:41:47Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-depkeyhead=cairo:cairo.h
+-depcontrol=cairo:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=cairo:${HB_WITH_CAIRO}
+-depincpath=cairo:/usr/include/cairo
+-depincpath=cairo:/opt/local/include/cairo
+-depimplibs=cairo:../../bin/libcairo-2.dll
+-depimplibd=cairo:cairo
+
+-iflag={bcc}-a
+
+-instfile=inc:hbcairo.ch
+-instfile=inc:hbcairo.hbx
+
+hbcairo.hbx
+
+context.c
+core.c
+image.c
+paths.c
+pdf.c
+png.c
+surface.c
+text.c
+transfor.c
+util.c

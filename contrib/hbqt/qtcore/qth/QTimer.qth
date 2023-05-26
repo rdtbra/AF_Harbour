@@ -1,0 +1,52 @@
+/*
+ * $Id: QTimer.qth 16548 2011-04-07 23:13:20Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QObject
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtCore/QTimer>
+
+
+/*
+ * QTimer ( QObject * parent = 0 )
+ * ~QTimer ()
+ */
+HB_FUNC( QT_QTIMER )
+{
+   __HB_RETPTRGC__( new QTimer( HB_ISOBJECT( 1 ) ? hbqt_par_QObject( 1 ) : 0 ) );
+}
+</CODE>
+
+<PROTOS>
+int interval () const
+bool isActive () const
+bool isSingleShot () const
+void setInterval ( int msec )
+void setSingleShot ( bool singleShot )
+int timerId () const
+
+void singleShot ( int msec, QObject * receiver, const char * member )
+</PROTOS>
+
+<SLOTS>
+void start ()
+void stop ()
+void start ( int msec )
+</SLOTS>
+
+<SIGNALS>
+void timeout ()
+</SIGNALS>

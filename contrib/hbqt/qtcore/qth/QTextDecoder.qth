@@ -1,0 +1,53 @@
+/*
+ * $Id: QTextDecoder.qth 16548 2011-04-07 23:13:20Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = Core
+New      = pTextCodec
+</CLASS>
+
+<CODE>
+#include <QtCore/QTextDecoder>
+
+
+/*
+ * QTextDecoder ( const QTextCodec * codec )
+ * ~QTextDecoder ()
+ */
+HB_FUNC( QT_QTEXTDECODER )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QTextDecoder( hbqt_par_QTextCodec( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QString toUnicode ( const char * chars, int len )
+//void toUnicode ( QString * target, const char * chars, int len )
+#
+//QString toUnicode ( const QByteArray & ba )
+#
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

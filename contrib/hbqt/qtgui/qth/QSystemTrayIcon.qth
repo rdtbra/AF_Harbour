@@ -1,0 +1,67 @@
+/*
+ * $Id: QSystemTrayIcon.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QObject
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QSystemTrayIcon>
+
+
+/*
+ * QSystemTrayIcon ( QObject * parent = 0 )
+ * QSystemTrayIcon ( const QIcon & icon, QObject * parent = 0 )
+ * ~QSystemTrayIcon ()
+ */
+HB_FUNC( QT_QSYSTEMTRAYICON )
+{
+   __HB_RETPTRGC__( new QSystemTrayIcon( hbqt_par_QObject( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum ActivationReason { Unknown, Context, DoubleClick, Trigger, MiddleClick }
+enum MessageIcon { NoIcon, Information, Warning, Critical }
+</ENUMS>
+
+<PROTOS>
+QMenu * contextMenu () const
+QRect geometry () const
+QIcon icon () const
+bool isVisible () const
+void setContextMenu ( QMenu * menu )
+void setIcon ( const QIcon & icon )
+void setToolTip ( const QString & tip )
+void showMessage ( const QString & title, const QString & message, MessageIcon icon = Information, int millisecondsTimeoutHint = 10000 )
+QString toolTip () const
+
+bool isSystemTrayAvailable ()
+bool supportsMessages ()
+</PROTOS>
+
+<SLOTS>
+void hide ()
+void setVisible ( bool visible )
+void show ()
+</SLOTS>
+
+<SIGNALS>
+void activated ( QSystemTrayIcon::ActivationReason reason )
+void messageClicked ()
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

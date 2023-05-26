@@ -1,0 +1,71 @@
+/*
+ * $Id: QButtonGroup.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QObject
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QButtonGroup>
+
+
+/*
+ * QButtonGroup ( QObject * parent = 0 )
+ * ~QButtonGroup ()
+ */
+HB_FUNC( QT_QBUTTONGROUP )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QButtonGroup( hbqt_par_QObject( 1 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QButtonGroup() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+void addButton ( QAbstractButton * button )
+void addButton ( QAbstractButton * button, int id )
+QAbstractButton * button ( int id ) const
+QList<QAbstractButton *> buttons () const
+QAbstractButton * checkedButton () const
+int checkedId () const
+bool exclusive () const
+int id ( QAbstractButton * button ) const
+void removeButton ( QAbstractButton * button )
+void setExclusive ( bool )
+void setId ( QAbstractButton * button, int id )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+void buttonClicked ( QAbstractButton * button )
+void buttonClicked ( int id )
+void buttonPressed ( QAbstractButton * button )
+void buttonPressed ( int id )
+void buttonReleased ( QAbstractButton * button )
+void buttonReleased ( int id )
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

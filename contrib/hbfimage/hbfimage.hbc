@@ -1,0 +1,12 @@
+#
+# $Id: hbfimage.hbc 16263 2011-02-10 11:20:55Z vszakats $
+#
+
+skip={dos}
+
+incpaths=.
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+
+libs=freeimage
+{darwin}libpaths=/opt/local/lib

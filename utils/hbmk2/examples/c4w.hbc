@@ -1,0 +1,5 @@
+#
+# $Id: c4w.hbc 11155 2009-05-28 06:26:06Z vszakats $
+#
+
+{win}libs=c4wclass wbrowset otabt clip4win

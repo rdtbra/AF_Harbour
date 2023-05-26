@@ -1,0 +1,10 @@
+#
+# $Id: hbqtdesigner.hbc 15261 2010-08-02 06:50:17Z vszakats $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+libs=qtdesigner/hbqtdesigner.hbc

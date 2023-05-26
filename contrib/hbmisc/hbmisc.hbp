@@ -1,0 +1,35 @@
+#
+# $Id: hbmisc.hbp 16210 2011-02-05 10:05:46Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbmisc.hbx
+
+hbmisc.hbx
+
+bbabble.c
+dates2.c
+ffind.c
+hb_f.c
+hbeditc.c
+irm.c
+spd.c
+strfmt.c
+stringsx.c
+
+calldll.prg
+fcomma.prg
+fileread.prg
+hbedit.prg
+nconvert.prg
+numtxthu.prg
+numtxten.prg
+stringp.prg
+twirler.prg
+udpds.prg

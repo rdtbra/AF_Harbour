@@ -1,0 +1,48 @@
+/*
+ * $Id: QPushButton.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractButton
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QPushButton>
+
+
+/*
+ * QPushButton ( QWidget * parent = 0 )
+ * QPushButton ( const QString & text, QWidget * parent = 0 )
+ * QPushButton ( const QIcon & icon, const QString & text, QWidget * parent = 0 )
+ * ~QPushButton ()
+ */
+HB_FUNC( QT_QPUSHBUTTON )
+{
+    __HB_RETPTRGC__( new QPushButton( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+bool autoDefault () const
+bool isDefault () const
+bool isFlat () const
+QMenu * menu () const
+void setAutoDefault ( bool )
+void setDefault ( bool )
+void setFlat ( bool )
+void setMenu ( QMenu * menu )
+</PROTOS>
+
+<SLOTS>
+void showMenu ()
+</SLOTS>

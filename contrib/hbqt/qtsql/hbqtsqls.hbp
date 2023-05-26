@@ -1,0 +1,7 @@
+#
+# $Id: hbqtsqls.hbp 16547 2011-04-07 20:54:16Z druzus $
+#
+
+../hbqt_commons.hbm
+
+hbqtsql.hbm

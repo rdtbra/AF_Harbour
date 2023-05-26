@@ -1,0 +1,7 @@
+#
+# $Id: uhttpdgd.hbp 13467 2010-01-04 17:42:28Z vszakats $
+#
+
+@uhttpd.hbp
+hbgd.hbc -DGD_SUPPORT
+hbct.hbc

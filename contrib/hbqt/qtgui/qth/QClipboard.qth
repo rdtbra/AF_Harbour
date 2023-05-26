@@ -1,0 +1,71 @@
+/*
+ * $Id: QClipboard.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QObject
+Type     = Core
+New      =
+Destructor = no
+Detached = yes
+</CLASS>
+
+<CODE>
+#include <QtGui/QPalette>
+#include <QtGui/QClipboard>
+#include <QtGui/QApplication>
+#include <QtCore/QMimeData>
+
+/*
+ * QApplication::clipboard()
+ *
+ */
+HB_FUNC( QT_QCLIPBOARD )
+{
+   //__HB_RETPTRGC__( QApplication::clipboard() );
+   pObj = QApplication::clipboard() ;
+}
+</CODE>
+
+<ENUMS>
+enum Mode { Clipboard, Selection, FindBuffer }
+</ENUMS>
+
+<PROTOS>
+void clear ( Mode mode = Clipboard )
+QImage image ( Mode mode = Clipboard ) const
+//const QMimeData * mimeData ( Mode mode = Clipboard ) const
+bool ownsClipboard () const
+bool ownsFindBuffer () const
+bool ownsSelection () const
+QPixmap pixmap ( Mode mode = Clipboard ) const
+void setImage ( const QImage & image, Mode mode = Clipboard )
+void setMimeData ( QMimeData * src, Mode mode = Clipboard )
+void setPixmap ( const QPixmap & pixmap, Mode mode = Clipboard )
+void setText ( const QString & text, Mode mode = Clipboard )
+bool supportsFindBuffer () const
+bool supportsSelection () const
+QString text ( Mode mode = Clipboard ) const
+#
+// QString text ( QString & subtype, Mode mode = Clipboard ) const
+#
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+void changed ( QClipboard::Mode mode )
+void dataChanged ()
+void findBufferChanged ()
+void selectionChanged ()
+</SIGNALS>

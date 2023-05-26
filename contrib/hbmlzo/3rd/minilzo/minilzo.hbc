@@ -1,0 +1,5 @@
+#
+# $Id: minilzo.hbc 16454 2011-03-09 22:36:06Z petr_ch $
+#
+
+libs=${hb_name}

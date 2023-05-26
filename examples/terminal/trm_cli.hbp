@@ -1,0 +1,7 @@
+#
+# $Id: trm_cli.hbp 11702 2009-07-10 14:19:15Z vszakats $
+#
+
+-q0 -w3 -es2 -kmo -l
+
+trm_cli.prg

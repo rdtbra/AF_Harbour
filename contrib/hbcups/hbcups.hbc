@@ -1,0 +1,10 @@
+#
+# $Id: hbcups.hbc 16924 2011-07-15 09:44:33Z vszakats $
+#
+
+incpaths=.
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+
+{unix}libs=cups
+{os2}libs=libcups pthread

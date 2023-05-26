@@ -1,0 +1,79 @@
+/*
+ * $Id: QStandardItemModel.qth 16373 2011-02-25 02:13:00Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QAbstractItemModeL
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QStandardItemModel>
+
+
+/*
+ * QStandardItemModel ( QObject * parent = 0 )
+ * QStandardItemModel ( int rows, int columns, QObject * parent = 0 )
+ * ~QStandardItemModel ()
+ */
+HB_FUNC( QT_QSTANDARDITEMMODEL )
+{
+   __HB_RETPTRGC__( new QStandardItemModel( hbqt_par_QObject( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+void appendColumn ( const QList<QStandardItem *> & items )                    [*D=1*]
+void appendRow ( const QList<QStandardItem *> & items )                       [*D=1*]
+void appendRow ( QStandardItem * item )                                       [*D=1*]
+void clear ()
+QList<QStandardItem *> findItems ( const QString & text, Qt::MatchFlags flags = Qt::MatchExactly, int column = 0 ) const
+QStandardItem * horizontalHeaderItem ( int column ) const
+QModelIndex indexFromItem ( const QStandardItem * item ) const
+void insertColumn ( int column, const QList<QStandardItem *> & items )        [*D=2*]
+bool insertColumn ( int column, const QModelIndex & parent = QModelIndex() )  [*D=2*]
+void insertRow ( int row, const QList<QStandardItem *> & items )              [*D=2*]
+bool insertRow ( int row, const QModelIndex & parent = QModelIndex() )        [*D=2*]
+void insertRow ( int row, QStandardItem * item )                              [*D=2*]
+QStandardItem * invisibleRootItem () const
+QStandardItem * item ( int row, int column = 0 ) const
+QStandardItem * itemFromIndex ( const QModelIndex & index ) const
+// const QStandardItem * itemPrototype () const
+void setColumnCount ( int columns )
+void setHorizontalHeaderItem ( int column, QStandardItem * item )             [*D=2*]
+void setHorizontalHeaderLabels ( const QStringList & labels )                 
+void setItem ( int row, int column, QStandardItem * item )                    [*D=3*]
+void setItem ( int row, QStandardItem * item )                                [*D=2*]
+void setItemPrototype ( const QStandardItem * item )                          [*D=1*]
+void setRowCount ( int rows )
+void setSortRole ( int role )
+void setVerticalHeaderItem ( int row, QStandardItem * item )                  [*D=2*]
+void setVerticalHeaderLabels ( const QStringList & labels )   
+int sortRole () const
+QList<QStandardItem *> takeColumn ( int column )                              [*A=1*]
+QStandardItem * takeHorizontalHeaderItem ( int column )                       [*A=1*]
+QStandardItem * takeItem ( int row, int column = 0 )                          [*A=1*]
+QList<QStandardItem *> takeRow ( int row )                                    [*A=1*]
+QStandardItem * takeVerticalHeaderItem ( int row )                            [*A=1*]
+QStandardItem * verticalHeaderItem ( int row ) const                          [*A=1*]
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+void itemChanged ( QStandardItem * item )
+</SIGNALS>

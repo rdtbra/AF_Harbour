@@ -1,0 +1,26 @@
+/*
+ * $Id: stripdoc.hbs 16310 2011-02-15 08:21:47Z vszakats $
+ */
+
+/*
+ * Strips HBDOC docs from source files.
+ *
+ * Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+ * www - http://harbour-project.org
+ *
+ */
+
+#define F_NAME 1
+
+PROCEDURE Main()
+   LOCAL aFile
+
+   FOR EACH aFile IN Directory( hb_osFileMask() )
+      IF Right( aFile[ F_NAME ], 2 ) == ".c" .OR. ;
+         Right( aFile[ F_NAME ], 4 ) == ".prg"
+
+         hb_MemoWrit( aFile[ F_NAME ], __hbdoc_FilterOut( MemoRead( aFile[ F_NAME ] ) ) )
+      ENDIF
+   NEXT
+
+   RETURN

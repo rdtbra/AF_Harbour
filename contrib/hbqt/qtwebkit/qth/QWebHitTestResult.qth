@@ -1,0 +1,63 @@
+/*
+ * $Id: QWebHitTestResult.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = Core
+New      =
+folder   = qtwebkit
+</CLASS>
+
+<CODE>
+#include "hbqtgui.h"
+
+#include <QtWebKit/QWebHitTestResult>
+
+
+/*
+ * QWebHitTestResult ()
+ * QWebHitTestResult ( const QWebHitTestResult & other )
+ * ~QWebHitTestResult ()
+ */
+HB_FUNC( QT_QWEBHITTESTRESULT )
+{
+   __HB_RETPTRGC__( new QWebHitTestResult() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QString alternateText () const
+QRect boundingRect () const
+QWebFrame * frame () const
+QUrl imageUrl () const
+bool isContentEditable () const
+bool isContentSelected () const
+bool isNull () const
+QWebFrame * linkTargetFrame () const
+QString linkText () const
+QUrl linkTitle () const
+QUrl linkUrl () const
+QPixmap pixmap () const
+QPoint pos () const
+QString title () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

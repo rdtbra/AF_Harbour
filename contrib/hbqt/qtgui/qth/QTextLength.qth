@@ -1,0 +1,49 @@
+/*
+ * $Id: QTextLength.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = 
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QTextLength>
+
+
+/*
+ * QTextLength ()
+ * QTextLength ( Type type, qreal value )
+ */
+HB_FUNC( QT_QTEXTLENGTH )
+{
+   __HB_RETPTRGC__( new QTextLength() );
+}
+</CODE>
+
+<ENUMS>
+enum Type { VariableLength, FixedLength, PercentageLength }
+</ENUMS>
+
+<PROTOS>
+qreal rawValue () const
+Type type () const
+qreal value ( qreal maximumLength ) const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

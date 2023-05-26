@@ -1,0 +1,43 @@
+/*
+ * $Id: QScrollArea.qth 16332 2011-02-19 02:01:24Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractScrollArea
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QScrollArea>
+
+
+/*
+ * QScrollArea ( QWidget * parent = 0 )
+ * ~QScrollArea ()
+ */
+HB_FUNC( QT_QSCROLLAREA )
+{
+   __HB_RETPTRGC__( new QScrollArea( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+Qt::Alignment alignment () const
+void ensureVisible ( int x, int y, int xmargin = 50, int ymargin = 50 )
+void ensureWidgetVisible ( QWidget * childWidget, int xmargin = 50, int ymargin = 50 )
+void setAlignment ( Qt::Alignment )
+void setWidget ( QWidget * widget )             [*D=1*]
+void setWidgetResizable ( bool resizable )
+QWidget * takeWidget ()                         [*A=1*]
+QWidget * widget () const
+bool widgetResizable () const
+</PROTOS>

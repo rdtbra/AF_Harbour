@@ -1,0 +1,50 @@
+/*
+ * $Id: QPageSetupDialog.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QDialog
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QPageSetupDialog>
+
+
+/*
+ * QPageSetupDialog ( QPrinter * printer, QWidget * parent = 0 )
+ * QPageSetupDialog ( QWidget * parent = 0 )
+ */
+HB_FUNC( QT_QPAGESETUPDIALOG )
+{
+   if( hb_pcount() >= 2 )
+      __HB_RETPTRGC__( new QPageSetupDialog( hbqt_par_QPrinter( 1 ), hbqt_par_QWidget( 1 ) ) );
+   else
+      __HB_RETPTRGC__( new QPageSetupDialog( hbqt_par_QWidget( 1 ) ) );      
+}
+</CODE>
+
+<ENUMS>
+enum PageSetupDialogOption { DontUseSheet }
+flags PageSetupDialogOptions
+</ENUMS>
+
+<PROTOS>
+virtual int exec ()
+void open ( QObject * receiver, const char * member )
+PageSetupDialogOptions options () const
+QPrinter * printer ()
+void setOption ( PageSetupDialogOption option, bool on = true )
+void setOptions ( PageSetupDialogOptions options )
+virtual void setVisible ( bool visible )
+bool testOption ( PageSetupDialogOption option ) const
+</PROTOS>

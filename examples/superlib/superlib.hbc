@@ -1,0 +1,8 @@
+#
+# $Id: superlib.hbc 16853 2011-06-03 23:33:59Z vszakats $
+#
+
+incpaths=.
+libpaths=lib/${hb_plat}/${hb_comp}
+
+libs=superlib

@@ -1,0 +1,14 @@
+#
+# $Id: wvtqt.hbp 16600 2011-04-16 14:54:13Z vszakats $
+#
+
+@hbmk.hbm
+
+-mt
+
+-gtwvt
+
+-d__WITH_WVT__
+
+wvtqt.prg
+browqt.prg

@@ -1,0 +1,66 @@
+/*
+ * $Id: QLCDNumber.qth 16535 2011-04-05 01:30:33Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QFrame
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QLCDNumber>
+
+
+/*
+ * QLCDNumber ( QWidget * parent = 0 )
+ * QLCDNumber ( uint numDigits, QWidget * parent = 0 )
+ * ~QLCDNumber ()
+ */
+HB_FUNC( QT_QLCDNUMBER )
+{
+   __HB_RETPTRGC__( new QLCDNumber( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum Mode { Hex, Dec, Oct, Bin }
+enum SegmentStyle { Outline, Filled, Flat }
+</ENUMS>
+
+<PROTOS>
+bool checkOverflow ( double num ) const
+//bool checkOverflow ( int num ) const
+int intValue () const
+Mode mode () const
+int numDigits () const
+SegmentStyle segmentStyle () const
+void setMode ( Mode )
+void setNumDigits ( int nDigits )
+void setSegmentStyle ( SegmentStyle )
+bool smallDecimalPoint () const
+double value () const
+</PROTOS>
+
+<SLOTS>
+void display ( const QString & s )
+void display ( double num )
+//void display ( int num )
+void setBinMode ()
+void setDecMode ()
+void setHexMode ()
+void setOctMode ()
+void setSmallDecimalPoint ( bool )
+</SLOTS>
+
+<SIGNALS>
+void overflow ()
+</SIGNALS>

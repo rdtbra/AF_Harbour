@@ -1,0 +1,9 @@
+#
+# $Id: gtallegs.hbp 15168 2010-07-23 11:08:33Z vszakats $
+#
+
+gtalleg.hbm
+
+-stop{!msvc}
+
+-cflag=-DALLEGRO_STATICLINK

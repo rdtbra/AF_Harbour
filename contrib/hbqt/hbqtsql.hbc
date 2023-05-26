@@ -1,0 +1,10 @@
+#
+# $Id: hbqtsql.hbc 16547 2011-04-07 20:54:16Z druzus $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+libs=qtsql/hbqtsql.hbc

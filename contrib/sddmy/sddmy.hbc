@@ -1,0 +1,12 @@
+#
+# $Id: sddmy.hbc 16939 2011-07-17 10:31:05Z vszakats $
+#
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+
+{unix}libs=mysqlclient
+{darwin}libpaths=/opt/local/lib/mysql5/mysql
+{win|dos}libs=libmysql
+{os2}libs=mysqlclient
+
+libs=../rddsql/rddsql.hbc

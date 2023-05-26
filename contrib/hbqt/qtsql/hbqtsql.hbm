@@ -1,0 +1,11 @@
+#
+# $Id: hbqtsql.hbm 16660 2011-04-24 08:11:16Z vszakats $
+#
+
+-i.
+
+qth/filelist.hbm
+
+hbqtsql.hbx
+
+../qtcore/hbqtcore.hbc

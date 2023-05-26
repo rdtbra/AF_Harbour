@@ -1,0 +1,12 @@
+#
+# $Id: hbcurl.hbp 15168 2010-07-23 11:08:33Z vszakats $
+#
+
+hbcurl.hbm
+
+-depimplibs=curl:../libcurl.dll
+-depimplibs=curl:../bin/libcurl.dll
+
+-iflag={bcc}-a
+
+hbcurls.hbp

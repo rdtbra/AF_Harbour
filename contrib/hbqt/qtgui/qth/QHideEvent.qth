@@ -1,0 +1,55 @@
+/*
+ * $Id: QHideEvent.qth 16485 2011-03-18 22:38:13Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QEvent
+Type     = Core
+New      = 
+Constructor = no
+</CLASS>
+
+<CODE>
+#include <QtGui/QHideEvent>
+
+
+/*
+ * QHideEvent ()
+ */
+HB_FUNC( QT_QHIDEEVENT )
+{
+   if( hb_pcount() == 0 )
+   {
+      __HB_RETPTRGC__( new QHideEvent() );
+   }
+   else if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QHideEvent( *hbqt_par_QHideEvent( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

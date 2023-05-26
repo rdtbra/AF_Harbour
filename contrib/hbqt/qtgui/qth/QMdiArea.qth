@@ -1,0 +1,87 @@
+/*
+ * $Id: QMdiArea.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = 
+Inherits = QAbstractScrollArea
+Type     = 
+New      =
+</CLASS>
+
+<DOC>
+</DOC>
+
+<CODE>
+#include <QtGui/QMdiArea>
+
+
+/*
+ * QMdiArea ( QWidget * parent = 0 )
+ * ~QMdiArea ()
+ * 
+ */
+HB_FUNC( QT_QMDIAREA )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QMdiArea( hbqt_par_QWidget( 1 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QMdiArea() );
+   }
+}
+</CODE>
+
+<ENUMS>
+enum AreaOption { DontMaximizeSubWindowOnActivation }
+flags AreaOptions
+enum ViewMode { SubWindowView, TabbedView }
+enum WindowOrder { CreationOrder, StackingOrder, ActivationHistoryOrder }
+</ENUMS>
+
+<PROTOS>
+WindowOrder activationOrder () const
+QMdiSubWindow * activeSubWindow () const
+QMdiSubWindow * addSubWindow ( QWidget * widget, Qt::WindowFlags windowFlags = 0 )
+QBrush background () const
+QMdiSubWindow * currentSubWindow () const
+bool documentMode () const
+void removeSubWindow ( QWidget * widget )
+void setActivationOrder ( WindowOrder order )
+void setBackground ( const QBrush & background )
+void setDocumentMode ( bool enabled )
+void setOption ( AreaOption option, bool on = true )
+void setTabPosition ( QTabWidget::TabPosition position )
+void setTabShape ( QTabWidget::TabShape shape )
+void setViewMode ( ViewMode mode )
+QList<QMdiSubWindow *> subWindowList ( WindowOrder order = CreationOrder ) const
+QTabWidget::TabPosition tabPosition () const
+QTabWidget::TabShape tabShape () const
+bool testOption ( AreaOption option ) const
+ViewMode viewMode () const
+</PROTOS>
+
+<SLOTS>
+void activateNextSubWindow ()
+void activatePreviousSubWindow ()
+void cascadeSubWindows ()
+void closeActiveSubWindow ()
+void closeAllSubWindows ()
+void setActiveSubWindow ( QMdiSubWindow * window )
+void tileSubWindows ()
+</SLOTS>
+
+<SIGNALS>
+void subWindowActivated ( QMdiSubWindow * window )
+</SIGNALS>

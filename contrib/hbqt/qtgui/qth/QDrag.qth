@@ -1,0 +1,61 @@
+/*
+ * $Id: QDrag.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = 
+Inherit  = QObject
+Type     = 
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QDrag>
+#include <QtGui/QPixmap>
+#include <QtCore/QPoint>
+
+
+/*
+ * QDrag ( QWidget * dragSource )
+ * ~QDrag ()
+ */
+HB_FUNC( QT_QDRAG )
+{
+   __HB_RETPTRGC__( new QDrag( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+Qt::DropAction exec ( Qt::DropActions supportedActions = Qt::MoveAction )
+Qt::DropAction exec ( Qt::DropActions supportedActions, Qt::DropAction defaultDropAction )
+QPoint hotSpot () const
+QMimeData * mimeData () const
+QPixmap pixmap () const
+void setDragCursor ( const QPixmap & cursor, Qt::DropAction action )
+void setHotSpot ( const QPoint & hotspot )
+void setMimeData ( QMimeData * data )   [*D=1*]
+void setPixmap ( const QPixmap & pixmap )
+QWidget * source () const
+QWidget * target () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

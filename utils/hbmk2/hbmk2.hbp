@@ -1,0 +1,16 @@
+#
+# $Id: hbmk2.hbp 16594 2011-04-15 08:21:50Z vszakats $
+#
+
+-q0 -w3 -es2 -kmo -l
+
+{HB_HAS_GPM}-prgflag=-DHB_HAS_GPM
+{HB_HAS_WATT}-prgflag=-DHB_HAS_WATT
+
+-nulrdd
+-mt
+hbmk2.prg
+
+hbmk2.%{hb_lng}.po
+-hbl=hbmk2.%{hb_lng}.hbl
+-lng=es_PE,hu_HU,pt_BR

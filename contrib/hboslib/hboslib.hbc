@@ -1,0 +1,7 @@
+#
+# $Id: hboslib.hbc 16852 2011-06-03 22:13:35Z vszakats $
+#
+
+incpaths=.
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}

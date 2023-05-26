@@ -1,0 +1,52 @@
+/*
+ * $Id: QHttpRequestHeader.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = no
+Inherits   = QHttpHeader
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtNetwork/QHttpRequestHeader>
+
+
+/* QHttpRequestHeader ()
+ * QHttpRequestHeader ( const QString & method, const QString & path, int majorVer = 1, int minorVer = 1 )
+ * QHttpRequestHeader ( const QHttpRequestHeader & header )
+ * QHttpRequestHeader ( const QString & str )
+ */
+HB_FUNC( QT_QHTTPREQUESTHEADER )
+{
+   __HB_RETPTRGC__( new QHttpRequestHeader() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+virtual int majorVersion () const
+QString method () const
+virtual int minorVersion () const
+QString path () const
+void setRequest ( const QString & method, const QString & path, int majorVer = 1, int minorVer = 1 )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

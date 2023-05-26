@@ -1,0 +1,47 @@
+/*
+ * $Id: hbunix.hbx 16765 2011-05-15 10:13:27Z vszakats $
+ */
+
+/* -------------------------------------------------------------------- */
+/* NOTE: You can add manual override which functions to include or      */
+/*       exclude from automatically generated EXTERNAL/DYNAMIC list.    */
+/*          Syntax: // HB_FUNC_INCLUDE <func>                           */
+/*                  // HB_FUNC_EXCLUDE <func>                           */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* WARNING: Automatically generated code below. DO NOT EDIT!            */
+/*          Regenerate using hbmk2 '-hbx=' option.                      */
+/* -------------------------------------------------------------------- */
+
+#ifndef __HBEXTERN_CH__HBUNIX__
+#define __HBEXTERN_CH__HBUNIX__
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBUNIX__ANNOUNCE )
+   ANNOUNCE __HBEXTERN__HBUNIX__
+#endif
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBUNIX__REQUEST )
+   #command DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+DYNAMIC POSIX_CHDIR
+DYNAMIC POSIX_ERRNO
+DYNAMIC POSIX_GETEGID
+DYNAMIC POSIX_GETEUID
+DYNAMIC POSIX_GETGID
+DYNAMIC POSIX_GETPID
+DYNAMIC POSIX_GETUID
+DYNAMIC POSIX_SETEGID
+DYNAMIC POSIX_SETEUID
+DYNAMIC POSIX_SETGID
+DYNAMIC POSIX_SETUID
+DYNAMIC POSIX_SLEEP
+DYNAMIC UNIX_CHROOT
+DYNAMIC UNIX_DAEMON
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBUNIX__REQUEST )
+   #uncommand DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+#endif

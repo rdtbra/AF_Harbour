@@ -1,0 +1,68 @@
+/*
+ * $Id: QHttpHeader.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = no
+Inherits   = 
+Type       = Core
+New        =
+Destructor = no
+Constructor = no
+</CLASS>
+
+<CODE>
+#include <QtNetwork/QHttpHeader>
+
+
+/*
+ * QHttpHeader ()
+ * QHttpHeader ( const QHttpHeader & header )
+ * QHttpHeader ( const QString & str )
+ * virtual ~QHttpHeader ()
+ */
+HB_FUNC( QT_QHTTPHEADER )
+{
+   
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+void addValue ( const QString & key, const QString & value )
+QStringList allValues ( const QString & key ) const
+uint contentLength () const
+QString contentType () const
+bool hasContentLength () const
+bool hasContentType () const
+bool hasKey ( const QString & key ) const
+bool isValid () const
+QStringList keys () const
+virtual int majorVersion () const = 0
+virtual int minorVersion () const = 0
+void removeAllValues ( const QString & key )
+void removeValue ( const QString & key )
+void setContentLength ( int len )
+void setContentType ( const QString & type )
+void setValue ( const QString & key, const QString & value )
+void setValues ( const QList<QPair<QString, QString> > & values )
+virtual QString toString () const
+QString value ( const QString & key ) const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

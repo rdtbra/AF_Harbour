@@ -1,0 +1,103 @@
+/*
+ * $Id: QSettings.qth 16548 2011-04-07 23:13:20Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QObject
+Type     = Core
+New      =
+</CLASS>
+
+<CODE>
+#include <QtCore/QSettings>
+#include <QtCore/QStringList>
+
+/*
+ * QSettings ( const QString & organization, const QString & application = QString(), QObject * parent = 0 )
+ * QSettings ( Scope scope, const QString & organization, const QString & application = QString(), QObject * parent =  * 0 )
+ * QSettings ( Format format, Scope scope, const QString & organization, const QString & application = QString(),  * QObject * parent = 0 )
+ * QSettings ( const QString & fileName, Format format, QObject * parent = 0 )
+ * QSettings ( QObject * parent = 0 )
+ * ~QSettings ()
+ */
+HB_FUNC( QT_QSETTINGS )
+{
+   if( hb_pcount() >= 2 && HB_ISCHAR( 1 ) && HB_ISCHAR( 2 ) )
+   {
+      __HB_RETPTRGC__( new QSettings( hbqt_par_QString( 1 ), hbqt_par_QString( 2 ), HB_ISOBJECT( 3 ) ? hbqt_par_QObject( 3 ) : 0 ) );
+   }
+   else if( hb_pcount() >= 2 && HB_ISCHAR( 1 ) && HB_ISNUM( 2 ) )
+   {
+      __HB_RETPTRGC__( new QSettings( hbqt_par_QString( 1 ), ( QSettings::Format ) hb_parni( 2 ), HB_ISOBJECT( 3 ) ? hbqt_par_QObject( 3 ) : 0 ) );
+   }
+   else if( hb_pcount() >= 2 && HB_ISNUM( 1 ) && HB_ISCHAR( 2 ) )
+   {
+      __HB_RETPTRGC__( new QSettings( ( QSettings::Scope ) hb_parni( 1 ), hbqt_par_QString( 2 ), HB_ISCHAR( 3 ) ? hbqt_par_QString( 3 ) : QString(), HB_ISOBJECT( 4 ) ? hbqt_par_QObject( 4 ) : 0 ) );
+   }
+   else if( hb_pcount() >= 3 && HB_ISNUM( 1 ) && HB_ISNUM( 2 ) && HB_ISCHAR( 3 ) )
+   {
+      __HB_RETPTRGC__( new QSettings( ( QSettings::Format ) hb_parni( 1 ), ( QSettings::Scope ) hb_parni( 2 ), hbqt_par_QString( 3 ), HB_ISCHAR( 4 ) ? hbqt_par_QString( 4 ) : QString(), HB_ISOBJECT( 5 ) ? hbqt_par_QObject( 5 ) : 0 ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QSettings() );
+   }
+}
+</CODE>
+
+<ENUMS>
+enum Format { NativeFormat, IniFormat, InvalidFormat }
+enum Scope { UserScope, SystemScope }
+enum Status { NoError, AccessError, FormatError }
+</ENUMS>
+
+<PROTOS>
+QStringList allKeys () const
+QString applicationName () const
+void beginGroup ( const QString & prefix )
+int beginReadArray ( const QString & prefix )
+void beginWriteArray ( const QString & prefix, int size = -1 )
+QStringList childGroups () const
+QStringList childKeys () const
+void clear ()
+bool contains ( const QString & key ) const
+void endArray ()
+void endGroup ()
+bool fallbacksEnabled () const
+QString fileName () const
+Format format () const
+QString group () const
+QTextCodec * iniCodec () const
+bool isWritable () const
+QString organizationName () const
+void remove ( const QString & key )
+Scope scope () const
+void setArrayIndex ( int i )
+void setFallbacksEnabled ( bool b )
+void setIniCodec ( QTextCodec * codec )
+void setIniCodec ( const char * codecName )
+void setValue ( const QString & key, const QVariant & value )
+Status status () const
+void sync ()
+QVariant value ( const QString & key, const QVariant & defaultValue = QVariant() ) const
+
+Format defaultFormat ()
+//Format registerFormat ( const QString & extension, ReadFunc readFunc, WriteFunc writeFunc, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive )
+void setDefaultFormat ( Format format )
+void setPath ( Format format, Scope scope, const QString & path )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

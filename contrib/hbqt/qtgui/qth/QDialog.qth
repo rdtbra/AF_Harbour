@@ -1,0 +1,58 @@
+/*
+ * $Id: QDialog.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent, nFlags
+</CLASS>
+
+<CODE>
+#include  <QtGui/QDialog>
+
+
+/*
+ * QDialog ( QWidget * parent = 0, Qt::WindowFlags f = 0 )
+ * ~QDialog ()
+ */
+HB_FUNC( QT_QDIALOG )
+{
+   __HB_RETPTRGC__( new QDialog( hbqt_par_QWidget( 1 ), ( Qt::WindowFlags ) hb_parni( 2 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum DialogCode { Accepted, Rejected }
+</ENUMS>
+
+<PROTOS>
+bool isSizeGripEnabled () const
+int result () const
+void setModal ( bool modal )
+void setResult ( int i )
+void setSizeGripEnabled ( bool )
+</PROTOS>
+
+<SLOTS>
+virtual void accept ()
+virtual void done ( int r )
+int exec ()
+void open ()
+virtual void reject ()
+</SLOTS>
+
+<SIGNALS>
+void accepted ()
+void finished ( int result )
+void rejected ()
+</SIGNALS>

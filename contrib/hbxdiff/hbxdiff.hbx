@@ -1,0 +1,47 @@
+/*
+ * $Id: hbxdiff.hbx 16218 2011-02-05 17:29:58Z vszakats $
+ */
+
+/* -------------------------------------------------------------------- */
+/* NOTE: You can add manual override which functions to include or      */
+/*       exclude from automatically generated EXTERNAL/DYNAMIC list.    */
+/*          Syntax: // HB_FUNC_INCLUDE <func>                           */
+/*                  // HB_FUNC_EXCLUDE <func>                           */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* WARNING: Automatically generated code below. DO NOT EDIT!            */
+/*          Regenerate using hbmk2 '-hbx=' option.                      */
+/* -------------------------------------------------------------------- */
+
+#ifndef __HBEXTERN_CH__HBXDIFF__
+#define __HBEXTERN_CH__HBXDIFF__
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBXDIFF__ANNOUNCE )
+   ANNOUNCE __HBEXTERN__HBXDIFF__
+#endif
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBXDIFF__REQUEST )
+   #command DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+DYNAMIC XDL_BDIFF
+DYNAMIC XDL_BDIFF_TGSIZE
+DYNAMIC XDL_BPATCH
+DYNAMIC XDL_DIFF
+DYNAMIC XDL_INIT_MMFILE
+DYNAMIC XDL_MMFILE_CMP
+DYNAMIC XDL_MMFILE_COMPACT
+DYNAMIC XDL_MMFILE_ISCOMPACT
+DYNAMIC XDL_MMFILE_SIZE
+DYNAMIC XDL_PATCH
+DYNAMIC XDL_RABDIFF
+DYNAMIC XDL_READ_MMFILE
+DYNAMIC XDL_SEEK_MMFILE
+DYNAMIC XDL_WRITE_MMFILE
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBXDIFF__REQUEST )
+   #uncommand DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+#endif

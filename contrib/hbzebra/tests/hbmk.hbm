@@ -1,0 +1,7 @@
+#
+# $Id: hbmk.hbm 15795 2010-11-09 13:22:33Z snaiperis $
+#
+
+../hbzebra.hbc
+
+-w3 -es2

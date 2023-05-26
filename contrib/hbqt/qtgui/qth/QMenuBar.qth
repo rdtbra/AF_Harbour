@@ -1,0 +1,56 @@
+/*
+ * $Id: QMenuBar.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QMenuBar>
+
+
+/*
+ * QMenuBar ( QWidget * parent = 0 )
+ * ~QMenuBar ()
+ */
+HB_FUNC( QT_QMENUBAR )
+{
+   __HB_RETPTRGC__( new QMenuBar( HB_ISOBJECT( 1 ) ? hbqt_par_QWidget( 1 ) : 0 ) );
+}
+</CODE>
+
+<PROTOS>
+QAction * activeAction () const
+QAction * addAction ( const QString & text )
+QAction * addAction ( const QString & text, const QObject * receiver, const char * member )
+void addAction ( QAction * action )
+QAction * addMenu ( QMenu * menu )
+QMenu * addMenu ( const QString & title )
+QMenu * addMenu ( const QIcon & icon, const QString & title )
+QAction * addSeparator ()
+void clear ()
+// QAction * defaultAction () const
+QAction * insertMenu ( QAction * before, QMenu * menu )
+QAction * insertSeparator ( QAction * before )
+bool isDefaultUp () const
+// OSMenuRef macMenu ()
+void setActiveAction ( QAction * act )
+// void setDefaultAction ( QAction * act )
+void setDefaultUp ( bool )
+</PROTOS>
+
+<SIGNALS>
+void hovered ( QAction * action )
+void triggered ( QAction * action )
+</SIGNALS>

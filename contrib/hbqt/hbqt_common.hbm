@@ -1,0 +1,38 @@
+#
+# $Id: hbqt_common.hbm 16749 2011-05-11 00:52:35Z vszakats $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+# Common settings for all hbqt subcomponents
+
+-hblib
+-inc
+
+-o${hb_targetname}
+-workdir=${hb_work}/${hb_plat}/${hb_comp}/${hb_targetname}
+
+-w3 -es2
+
+-prgflag=-D_HB_TR_NOALWAYS_
+
+-i.
+
+-stop{dos|watcom|bcc|pocc|pocc64|poccarm|msvcia64|pcc}
+
+-plugin=hbmk2_qt.hbs
+
+-deppkgname=qt:QtCore
+-depkeyhead=qt:QtCore/qglobal.h
+-depcontrol=qt:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=qt:${HB_WITH_QT}
+{!darwin}-depincpath=qt:/usr/include/qt4
+{!darwin}-depincpath=qt:/usr/lib/qt4/include
+{!darwin}-depincpath=qt:/usr/include
+{bsd}-depincpath=qt:/usr/local/include/qt4
+{darwin}-depincpath=qt:/Developer/qt/include
+{darwin}-depincpath=qt:/Library/Frameworks
+{beos}-depincpath=qt:/boot/common/include

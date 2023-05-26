@@ -1,0 +1,41 @@
+/*
+ * $Id: QCommandLinkButton.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+
+Inherit  = QPushButton
+New      = pParent
+Calls    = QT_QCommandLinkButton
+
+</CLASS>
+
+
+<CODE>
+#include <QtGui/QCommandLinkButton>
+
+
+/*
+ * QCommandLinkButton ( QWidget * parent = 0 )
+ * QCommandLinkButton ( const QString & text, QWidget * parent = 0 )
+ * QCommandLinkButton ( const QString & text, const QString & description, QWidget * parent = 0 )
+ */
+HB_FUNC( QT_QCOMMANDLINKBUTTON )
+{
+   __HB_RETPTRGC__( new QCommandLinkButton( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+QString description () const
+void setDescription ( const QString & description )
+</PROTOS>

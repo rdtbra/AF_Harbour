@@ -1,0 +1,55 @@
+/*
+ * $Id: QShowEvent.qth 16485 2011-03-18 22:38:13Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QEvent
+Type     = Core
+New      = 
+Constructor =
+</CLASS>
+
+<CODE>
+#include <QtGui/QHideEvent>
+
+
+/*
+ * QShowEvent ()
+ */
+HB_FUNC( QT_QSHOWEVENT )
+{
+   if( hb_pcount() == 0 )
+   {
+      __HB_RETPTRGC__( new QShowEvent() );
+   }
+   else if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QShowEvent( *hbqt_par_QShowEvent( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

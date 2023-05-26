@@ -1,0 +1,7 @@
+#
+# $Id: modules.hbp 11199 2009-06-03 09:13:36Z vszakats $
+#
+
+-gh -w3
+-ohome/cgi-bin/
+modules/*.prg

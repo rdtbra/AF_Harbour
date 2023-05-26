@@ -1,0 +1,97 @@
+/*
+ * $Id: QDateTime.qth 16548 2011-04-07 23:13:20Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = Core
+New      =
+</CLASS>
+
+<CODE>
+#include <QtCore/QDateTime>
+
+
+/*
+ * QDateTime ()
+ * QDateTime ( const QDate & date )
+ * QDateTime ( const QDate & date, const QTime & time, Qt::TimeSpec spec = Qt::LocalTime )
+ * QDateTime ( const QDateTime & other )
+ * ~QDateTime ()
+ */
+HB_FUNC( QT_QDATETIME )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      if( hbqt_isObjectType( 1, HBQT_TYPE_QDate ) )
+      {
+         __HB_RETPTRGC__( new QDateTime( *hbqt_par_QDate( 1 ) ) );
+      }
+      else if( hbqt_isObjectType( 1, HBQT_TYPE_QDateTime ) )
+      {
+         __HB_RETPTRGC__( new QDateTime( *hbqt_par_QDateTime( 1 ) ) );
+      }
+   }
+   else if( hb_pcount() >= 2 && HB_ISOBJECT( 2 ) && HB_ISOBJECT( 3 ) )
+   {
+      __HB_RETPTRGC__( new QDateTime( *hbqt_par_QDate( 1 ), *hbqt_par_QTime( 2 ), HB_ISNUM( 3 ) ? ( Qt::TimeSpec ) hb_parni( 3 ) : Qt::LocalTime ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QDateTime() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QDateTime addDays ( int ndays ) const
+QDateTime addMSecs ( qint64 msecs ) const
+QDateTime addMonths ( int nmonths ) const
+QDateTime addSecs ( int s ) const
+QDateTime addYears ( int nyears ) const
+QDate date () const
+int daysTo ( const QDateTime & other ) const
+bool isNull () const
+bool isValid () const
+int secsTo ( const QDateTime & other ) const
+void setDate ( const QDate & date )
+void setTime ( const QTime & time )
+void setTimeSpec ( Qt::TimeSpec spec )
+void setTime_t ( uint seconds )
+QTime time () const
+Qt::TimeSpec timeSpec () const
+QDateTime toLocalTime () const
+QString toString ( const QString & format ) const
+QString toString ( Qt::DateFormat format = Qt::TextDate ) const
+QDateTime toTimeSpec ( Qt::TimeSpec specification ) const
+uint toTime_t () const
+QDateTime toUTC () const
+
+
+QDateTime currentDateTime ()
+QDateTime fromString ( const QString & string, Qt::DateFormat format = Qt::TextDate )
+QDateTime fromString ( const QString & string, const QString & format )
+QDateTime fromTime_t ( uint seconds )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

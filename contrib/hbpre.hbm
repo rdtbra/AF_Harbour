@@ -1,0 +1,25 @@
+#
+# $Id: hbpre.hbm 16663 2011-04-25 20:34:20Z vszakats $
+#
+
+# These may be overridden by local project options.
+
+-q0
+
+{HB_BUILD_VERBOSE}-quiet-
+{HB_BUILD_VERBOSE}-info
+{HB_BUILD_VERBOSE}-trace
+
+{!HB_BUILD_DEBUG}-l
+
+{(HB_BUILD_MODE='cpp')|(!HB_BUILD_MODE&allmsvc)}-cpp=yes
+{HB_BUILD_MODE='c'}-cpp=no
+
+{_HB_BUILD_LIBDYN}-hbdyn
+
+-c=iso90
+
+# For cegcc Windows headers
+-c=gnu90{wce&allmingw}
+
+-warn=yes

@@ -1,0 +1,24 @@
+#
+# $Id: hbmagic.hbp 16395 2011-02-28 15:11:36Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-depkeyhead=libmagic:magic.h
+-depcontrol=libmagic:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=libmagic:${HB_WITH_LIBMAGIC}
+-depincpath=libmagic:/usr/include
+-depincpath=libmagic:/opt/local/include
+
+-instfile=inc:hbmagic.ch
+-instfile=inc:hbmagic.hbx
+
+hbmagic.hbx
+
+core.c
+hbmagis.prg

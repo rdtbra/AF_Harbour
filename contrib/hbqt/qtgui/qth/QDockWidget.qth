@@ -1,0 +1,67 @@
+/*
+ * $Id: QDockWidget.qth 16531 2011-04-03 15:16:43Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QDockWidget>
+
+
+/*
+ * QDockWidget ( const QString & title, QWidget * parent = 0, Qt::WindowFlags flags = 0 )
+ * QDockWidget ( QWidget * parent = 0, Qt::WindowFlags flags = 0 )
+ * ~QDockWidget ()
+ */
+HB_FUNC( QT_QDOCKWIDGET )
+{
+   if( hb_pcount() >= 1 && HB_ISCHAR( 1 ) )
+   {
+      __HB_RETPTRGC__( new QDockWidget( hbqt_par_QString( 1 ), ( HB_ISOBJECT( 2 ) ? hbqt_par_QWidget( 2 ) : 0 ), ( Qt::WindowFlags ) hb_parni( 2 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QDockWidget( ( HB_ISOBJECT( 1 ) ? hbqt_par_QWidget( 1 ) : 0 ), ( Qt::WindowFlags ) hb_parni( 2 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+enum DockWidgetFeature { DockWidgetClosable, DockWidgetMovable, DockWidgetFloatable, DockWidgetVerticalTitleBar, AllDockWidgetFeatures, NoDockWidgetFeatures }
+flags DockWidgetFeatures
+</ENUMS>
+
+<PROTOS>
+Qt::DockWidgetAreas allowedAreas () const
+DockWidgetFeatures features () const
+bool isAreaAllowed ( Qt::DockWidgetArea area ) const
+bool isFloating () const
+void setAllowedAreas ( Qt::DockWidgetAreas areas )
+void setFeatures ( DockWidgetFeatures features )
+void setFloating ( bool floating )
+void setTitleBarWidget ( QWidget * widget )            [*D=1*]
+void setWidget ( QWidget * widget )                    [*D=1*]
+QWidget * titleBarWidget () const
+QAction * toggleViewAction () const
+QWidget * widget () const
+</PROTOS>
+
+<SIGNALS>
+void allowedAreasChanged ( Qt::DockWidgetAreas allowedAreas )
+void dockLocationChanged ( Qt::DockWidgetArea area )
+void featuresChanged ( QDockWidget::DockWidgetFeatures features )
+void topLevelChanged ( bool topLevel )
+void visibilityChanged ( bool visible )
+</SIGNALS>

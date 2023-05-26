@@ -1,0 +1,73 @@
+/*
+ * $Id: QItemSelectionModel.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = 
+Inherits   = QObject
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QItemSelectionModel>
+
+
+/* QItemSelectionModel ( QAbstractItemModel * model )
+ * QItemSelectionModel ( QAbstractItemModel * model, QObject * parent )
+ * virtual ~QItemSelectionModel ()
+ */
+HB_FUNC( QT_QITEMSELECTIONMODEL )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QItemSelectionModel( hbqt_par_QAbstractItemModel( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+enum SelectionFlag { NoUpdate, Clear, Select, Deselect, ..., ClearAndSelect }
+flags SelectionFlags
+</ENUMS>
+
+<PROTOS>
+bool columnIntersectsSelection ( int column, const QModelIndex & parent ) const
+QModelIndex currentIndex () const
+bool hasSelection () const
+bool isColumnSelected ( int column, const QModelIndex & parent ) const
+bool isRowSelected ( int row, const QModelIndex & parent ) const
+bool isSelected ( const QModelIndex & index ) const
+const QAbstractItemModel * model () const
+bool rowIntersectsSelection ( int row, const QModelIndex & parent ) const
+// QModelIndexList selectedColumns ( int row = 0 ) const
+// QModelIndexList selectedIndexes () const
+// QModelIndexList selectedRows ( int column = 0 ) const
+const QItemSelection selection () const
+</PROTOS>
+
+<SLOTS>
+virtual void clear ()
+void clearSelection ()
+virtual void reset ()
+virtual void select ( const QModelIndex & index, QItemSelectionModel::SelectionFlags command )
+virtual void select ( const QItemSelection & selection, QItemSelectionModel::SelectionFlags command )
+void setCurrentIndex ( const QModelIndex & index, QItemSelectionModel::SelectionFlags command )
+</SLOTS>
+
+<SIGNALS>
+void currentChanged ( const QModelIndex & current, const QModelIndex & previous )
+void currentColumnChanged ( const QModelIndex & current, const QModelIndex & previous )
+void currentRowChanged ( const QModelIndex & current, const QModelIndex & previous )
+void selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected )
+</SIGNALS>

@@ -1,0 +1,10 @@
+#
+# $Id: gtqtc.hbc 16567 2011-04-12 05:49:07Z vouchcac $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+libs=gtqtc/gtqtc.hbc

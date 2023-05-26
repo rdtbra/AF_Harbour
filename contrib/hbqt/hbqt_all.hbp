@@ -1,0 +1,19 @@
+#
+# $Id: hbqt_all.hbp 16677 2011-04-26 22:37:25Z vszakats $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+-hbcontainer
+
+# Do not change this to hbqt.hbc reference.
+hbqtcore.hbc
+hbqtdesigner.hbc
+hbqtgui.hbc
+hbqtnetwork.hbc
+hbqtwebkit.hbc
+hbqtsql.hbc
+gtqtc.hbc

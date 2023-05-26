@@ -1,0 +1,31 @@
+#
+# $Id: hbzebra.hbp 16211 2011-02-05 10:32:50Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbzebra.ch
+-instfile=inc:hbzebra.hbx
+
+hbzebra.hbx
+
+# Core
+core.c
+coredraw.c
+
+# Barcodes
+codabar.c
+code11.c
+code128.c
+code39.c
+code93.c
+eanupc.c
+itf.c
+msi.c
+pdf417.c
+datamtrx.c

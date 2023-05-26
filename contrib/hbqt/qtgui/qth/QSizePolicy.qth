@@ -1,0 +1,75 @@
+/*
+ * $Id: QSizePolicy.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = 
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QSizePolicy>
+
+
+/*
+ * QSizePolicy ()
+ * QSizePolicy ( Policy horizontal, Policy vertical )
+ * QSizePolicy ( Policy horizontal, Policy vertical, ControlType type )
+ */
+HB_FUNC( QT_QSIZEPOLICY )
+{
+   if( hb_pcount() >= 2 && HB_ISNUM( 1 ) && HB_ISNUM( 2 ) )
+   {
+      __HB_RETPTRGC__( new QSizePolicy( ( QSizePolicy::Policy ) hb_parni( 1 ), ( QSizePolicy::Policy ) hb_parni( 2 ) ) );
+   }
+   else if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QSizePolicy( *hbqt_par_QSizePolicy( 1 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QSizePolicy() );
+   }
+}
+</CODE>
+
+<ENUMS>
+enum Policy { Fixed, Minimum, Maximum, Preferred, ..., Ignored }
+enum PolicyFlag { GrowFlag, ExpandFlag, ShrinkFlag, IgnoreFlag }
+enum ControlType { DefaultType, ButtonBox, CheckBox, ComboBox, ..., ToolButton }
+flags ControlTypes
+</ENUMS>
+
+<PROTOS>
+ControlType controlType () const
+Qt::Orientations expandingDirections () const
+bool hasHeightForWidth () const
+Policy horizontalPolicy () const
+int horizontalStretch () const
+void setControlType ( ControlType type )
+void setHeightForWidth ( bool dependent )
+void setHorizontalPolicy ( Policy policy )
+void setHorizontalStretch ( uchar stretchFactor )
+void setVerticalPolicy ( Policy policy )
+void setVerticalStretch ( uchar stretchFactor )
+void transpose ()
+Policy verticalPolicy () const
+int verticalStretch () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

@@ -1,0 +1,75 @@
+/*
+ * $Id: QListView.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractItemView
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QListView>
+
+
+/*
+ * QListView ( QWidget * parent = 0 )
+ * ~QListView ()
+ */
+HB_FUNC( QT_QLISTVIEW )
+{
+   __HB_RETPTRGC__( new QListView( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum Flow { LeftToRight, TopToBottom }
+enum LayoutMode { SinglePass, Batched }
+enum Movement { Static, Free, Snap }
+enum ResizeMode { Fixed, Adjust }
+enum ViewMode { ListMode, IconMode }
+</ENUMS>
+
+<PROTOS>
+int batchSize () const
+void clearPropertyFlags ()
+Flow flow () const
+QSize gridSize () const
+bool isRowHidden ( int row ) const
+bool isSelectionRectVisible () const
+bool isWrapping () const
+LayoutMode layoutMode () const
+int modelColumn () const
+Movement movement () const
+ResizeMode resizeMode () const
+void setBatchSize ( int batchSize )
+void setFlow ( Flow flow )
+void setGridSize ( const QSize & size )
+void setLayoutMode ( LayoutMode mode )
+void setModelColumn ( int column )
+void setMovement ( Movement movement )
+void setResizeMode ( ResizeMode mode )
+void setRowHidden ( int row, bool hide )
+void setSelectionRectVisible ( bool show )
+void setSpacing ( int space )
+void setUniformItemSizes ( bool enable )
+void setViewMode ( ViewMode mode )
+void setWordWrap ( bool on )
+void setWrapping ( bool enable )
+int spacing () const
+bool uniformItemSizes () const
+ViewMode viewMode () const
+bool wordWrap () const
+</PROTOS>
+
+<SIGNALS>
+void indexesMoved ( const QModelIndexList & indexes )
+</SIGNALS>

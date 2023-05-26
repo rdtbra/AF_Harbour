@@ -1,0 +1,18 @@
+#
+# $Id: hbfoxpro.hbp 16210 2011-02-05 10:05:46Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbfoxpro.ch
+-instfile=inc:hbfoxpro.hbx
+
+hbfoxpro.hbx
+
+dll.prg
+misc.prg

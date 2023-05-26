@@ -1,0 +1,9 @@
+#
+# $Id: hbcurls.hbp 16239 2011-02-07 16:21:29Z vszakats $
+#
+
+hbcurl.hbm
+
+-stop{!allwin|hbdyn}
+
+-cflag=-DCURL_STATICLIB

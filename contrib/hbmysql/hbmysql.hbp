@@ -1,0 +1,29 @@
+#
+# $Id: hbmysql.hbp 16233 2011-02-06 15:41:47Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-depkeyhead=mysql:mysql.h
+-depcontrol=mysql:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=mysql:${HB_WITH_MYSQL}
+-depincpath=mysql:/usr/include/mysql
+-depincpath=mysql:/opt/local/include/mysql5/mysql
+-depimplibs=mysql:../lib/opt/libmySQL.dll
+-depimplibs=mysql:../lib/libmySQL.dll
+
+-instfile=inc:mysql.ch
+-instfile=inc:hbmysql.hbx
+
+hbmysql.hbx
+
+mysql.c
+mysqlold.c
+
+tmysql.prg
+tsqlbrw.prg

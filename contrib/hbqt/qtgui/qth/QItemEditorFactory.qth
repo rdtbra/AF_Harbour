@@ -1,0 +1,65 @@
+/*
+ * $Id: QItemEditorFactory.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = 
+New      =
+</CLASS>
+
+<SUBCLASS>
+</SUBCLASS>
+
+<DOC>
+</DOC>
+
+<CODE>
+#include <QtGui/QItemEditorFactory>
+
+
+/*
+ * QItemEditorFactory ()
+ * virtual ~QItemEditorFactory ()
+ * 
+ */
+HB_FUNC( QT_QITEMEDITORFACTORY )
+{
+   if( HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QItemEditorFactory() );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QItemEditorFactory( *hbqt_par_QItemEditorFactory( 1 ) ) );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+virtual QWidget * createEditor ( QVariant::Type type, QWidget * parent ) const
+void registerEditor ( QVariant::Type type, QItemEditorCreatorBase * creator )
+virtual QByteArray valuePropertyName ( QVariant::Type type ) const
+
+//const QItemEditorFactory * defaultFactory ()
+void setDefaultFactory ( QItemEditorFactory * factory )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

@@ -1,0 +1,8 @@
+#
+# $Id: hbmlzo.hbc 16454 2011-03-09 22:36:06Z petr_ch $
+#
+
+incpaths=.
+
+#libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+libs=3rd/minilzo/minilzo.hbc

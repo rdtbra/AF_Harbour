@@ -1,0 +1,9 @@
+#
+# $Id: olesrv4.hbp 14643 2010-05-31 08:26:06Z druzus $
+#
+
+-hbdynvm
+
+../hbolesrv.hbc
+
+olesrv4.prg

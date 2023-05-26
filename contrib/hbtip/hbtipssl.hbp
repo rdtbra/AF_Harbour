@@ -1,0 +1,9 @@
+#
+# $Id: hbtipssl.hbp 15168 2010-07-23 11:08:33Z vszakats $
+#
+
+hbtip.hbm
+
+../hbssl/hbssl.hbc
+
+-DHB_HAS_OPENSSL

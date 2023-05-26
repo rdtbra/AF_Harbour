@@ -1,0 +1,75 @@
+/*
+ * $Id: QGraphicsLineItem.qth 16683 2011-04-27 10:00:24Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherit  = QGraphicsItem
+Type     =
+New      =
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsLineItem>
+#include <QtGui/QPen>
+
+
+/*
+ * QGraphicsLineItem ( QGraphicsItem * parent = 0 )
+ * QGraphicsLineItem ( const QLineF & line, QGraphicsItem * parent = 0 )
+ * QGraphicsLineItem ( qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent = 0 )
+ * ~QGraphicsLineItem ()
+ */
+HB_FUNC( QT_QGRAPHICSLINEITEM )
+{
+   if( hb_pcount() >= 4 && HB_ISNUM( 1 ) && HB_ISNUM( 2 ) && HB_ISNUM( 3 ) && HB_ISNUM( 4 ) )
+   {
+      __HB_RETPTRGC__( new QGraphicsLineItem( hb_parnd( 1 ), hb_parnd( 2 ), hb_parnd( 3 ), hb_parnd( 4 ), ( HB_ISOBJECT( 5 ) ? hbqt_par_QGraphicsItem( 5 ) : 0 ) ) );
+   }
+   else if( hb_pcount() >= 1 && HB_ISOBJECT( 1 ) )
+   {
+      HBQT_GC_T * p = ( HBQT_GC_T * ) hbqt_par_ptr( 1 );
+      if( p->type == HBQT_TYPE_QLineF )
+      {
+         __HB_RETPTRGC__( new QGraphicsLineItem( *hbqt_par_QLineF( 1 ), ( HB_ISOBJECT( 2 ) ? hbqt_par_QGraphicsItem( 2 ) : 0 ) ) );
+      }
+      else
+      {
+         __HB_RETPTRGC__( new QGraphicsLineItem( hbqt_par_QGraphicsItem( 1 ) ) );
+      }
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QGraphicsLineItem() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QLineF line () const
+QPen pen () const
+void setLine ( const QLineF & line )
+void setLine ( qreal x1, qreal y1, qreal x2, qreal y2 )
+void setPen ( const QPen & pen )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

@@ -1,0 +1,55 @@
+/*
+ * $Id: QStringListModel.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QAbstractListModel
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QStringListModel>
+
+
+/*
+ * QStringListModel ( QObject * parent = 0 )
+ * QStringListModel ( const QStringList & strings, QObject * parent = 0 )
+ */
+HB_FUNC( QT_QSTRINGLISTMODEL )
+{
+   __HB_RETPTRGC__( new QStringListModel() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+virtual QVariant data ( const QModelIndex & index, int role ) const
+virtual Qt::ItemFlags flags ( const QModelIndex & index ) const
+virtual bool insertRows ( int row, int count, const QModelIndex & parent = QModelIndex() )
+virtual bool removeRows ( int row, int count, const QModelIndex & parent = QModelIndex() )
+virtual int rowCount ( const QModelIndex & parent = QModelIndex() ) const
+virtual bool setData ( const QModelIndex & index, const QVariant & value, int role = Qt::EditRole )
+void setStringList ( const QStringList & strings )
+QStringList stringList () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

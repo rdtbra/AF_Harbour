@@ -1,0 +1,67 @@
+/*
+ * $Id: QModelIndex.qth 16548 2011-04-07 23:13:20Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = Core
+New      =
+</CLASS>
+
+<CODE>
+#include <QtCore/QModelIndex>
+
+
+/*
+ * QModelIndex ()
+ * QModelIndex ( const QModelIndex & other )
+ * ~QModelIndex ()
+ */
+HB_FUNC( QT_QMODELINDEX )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QModelIndex( *hbqt_par_QModelIndex( 1 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QModelIndex() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QModelIndex child ( int row, int column ) const
+int column () const
+QVariant data ( int role = Qt::DisplayRole ) const
+Qt::ItemFlags flags () const
+qint64 internalId () const
+void * internalPointer () const
+bool isValid () const
+const QAbstractItemModel * model () const
+QModelIndex parent () const
+int row () const
+QModelIndex sibling ( int row, int column ) const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

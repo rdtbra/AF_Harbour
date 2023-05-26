@@ -1,0 +1,27 @@
+#
+# $Id: hbblat.hbp 16233 2011-02-06 15:41:47Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-stop{!win}
+
+-depoptional=blat:yes
+-depkeyhead=blat:blat.h
+-depcontrol=blat:${HB_WITH_BLAT}
+-depimplibs=blat:../blat.dll
+
+-iflag={bcc}-a
+
+-instfile=inc:hbblat.ch
+-instfile=inc:hbblat.hbx
+
+hbblat.hbx
+
+blatwrp.c
+blatcls.prg

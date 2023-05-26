@@ -1,0 +1,88 @@
+/*
+ * $Id: QWizard.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QDialog
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QWizard>
+#include <QtCore/QVariant>
+
+
+/*
+ * QWizard ( QWidget * parent = 0, Qt::WindowFlags flags = 0 )
+ * ~QWizard ()
+ */
+HB_FUNC( QT_QWIZARD )
+{
+   __HB_RETPTRGC__( new QWizard( hbqt_par_QWidget( 2 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum WizardButton { BackButton, NextButton, CommitButton, FinishButton, ..., Stretch }
+enum WizardOption { IndependentPages, IgnoreSubTitles, ExtendedWatermarkPixmap, NoDefaultButton, ..., HaveCustomButton3 }
+enum WizardPixmap { WatermarkPixmap, LogoPixmap, BannerPixmap, BackgroundPixmap }
+enum WizardStyle { ClassicStyle, ModernStyle, MacStyle, AeroStyle }
+flags WizardOptions
+</ENUMS>
+
+<PROTOS>
+int addPage ( QWizardPage * page )
+QAbstractButton * button ( WizardButton which ) const
+QString buttonText ( WizardButton which ) const
+int currentId () const
+QWizardPage * currentPage () const
+QVariant field ( const QString & name ) const
+bool hasVisitedPage ( int id ) const
+virtual int nextId () const
+WizardOptions options () const
+QWizardPage * page ( int id ) const
+QList<int> pageIds () const
+QPixmap pixmap ( WizardPixmap which ) const
+void removePage ( int id )
+void setButton ( WizardButton which, QAbstractButton * button )
+void setButtonLayout ( const QList<WizardButton> & layout )
+void setButtonText ( WizardButton which, const QString & text )
+void setDefaultProperty ( const char * className, const char * property, const char * changedSignal )
+void setField ( const QString & name, const QVariant & value )
+void setOption ( WizardOption option, bool on = true )
+void setOptions ( WizardOptions options )
+void setPage ( int id, QWizardPage * page )
+void setPixmap ( WizardPixmap which, const QPixmap & pixmap )
+void setStartId ( int id )
+void setSubTitleFormat ( Qt::TextFormat format )
+void setTitleFormat ( Qt::TextFormat format )
+void setWizardStyle ( WizardStyle style )
+int startId () const
+Qt::TextFormat subTitleFormat () const
+bool testOption ( WizardOption option ) const
+Qt::TextFormat titleFormat () const
+virtual bool validateCurrentPage ()
+QList<int> visitedPages () const
+WizardStyle wizardStyle () const
+</PROTOS>
+
+<SLOTS>
+void back ()
+void next ()
+void restart ()
+</SLOTS>
+
+<SIGNALS>
+void currentIdChanged ( int id )
+void customButtonClicked ( int which )
+void helpRequested ()
+</SIGNALS>

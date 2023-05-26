@@ -1,0 +1,7 @@
+#
+# $Id: lzf.hbc 16611 2011-04-17 22:13:40Z vszakats $
+#
+
+libs=${hb_name}
+
+cflags=-DAVOID_ERRNO=1{wce}

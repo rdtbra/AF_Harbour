@@ -1,0 +1,82 @@
+/*
+ * $Id: QFileSystemModel.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QAbstractItemModel
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QFileSystemModel>
+#include <QtCore/QDateTime>
+
+/*
+ * QFileSystemModel ( QObject * parent = 0 )
+ * ~QFileSystemModel ()
+ */
+HB_FUNC( QT_QFILESYSTEMMODEL )
+{
+   __HB_RETPTRGC__( new QFileSystemModel() );
+}
+</CODE>
+
+<ENUMS>
+enum Roles { FileIconRole, FilePathRole, FileNameRole, FilePermissions }
+</ENUMS>
+
+<PROTOS>
+virtual bool dropMimeData ( const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent )
+QIcon fileIcon ( const QModelIndex & index ) const
+QFileInfo fileInfo ( const QModelIndex & index ) const
+QString fileName ( const QModelIndex & index ) const
+QString filePath ( const QModelIndex & index ) const
+QDir::Filters filter () const
+// QFileIconProvider * iconProvider () const
+QModelIndex index ( const QString & path, int column = 0 ) const
+bool isDir ( const QModelIndex & index ) const
+bool isReadOnly () const
+QDateTime lastModified ( const QModelIndex & index ) const
+// virtual QMimeData * mimeData ( const QModelIndexList & indexes ) const
+virtual QStringList mimeTypes () const
+QModelIndex mkdir ( const QModelIndex & parent, const QString & name )
+QVariant myComputer ( int role = Qt::DisplayRole ) const
+bool nameFilterDisables () const
+QStringList nameFilters () const
+QFile::Permissions permissions ( const QModelIndex & index ) const
+bool remove ( const QModelIndex & index ) const
+bool resolveSymlinks () const
+bool rmdir ( const QModelIndex & index ) const
+QDir rootDirectory () const
+QString rootPath () const
+void setFilter ( QDir::Filters filters )
+// void setIconProvider ( QFileIconProvider * provider )
+void setNameFilterDisables ( bool enable )
+void setNameFilters ( const QStringList & filters )
+void setReadOnly ( bool enable )
+void setResolveSymlinks ( bool enable )
+QModelIndex setRootPath ( const QString & newPath )
+qint64 size ( const QModelIndex & index ) const
+QString type ( const QModelIndex & index ) const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+void fileRenamed ( const QString & path, const QString & oldName, const QString & newName )
+void rootPathChanged ( const QString & newPath )
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

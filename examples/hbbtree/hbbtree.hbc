@@ -1,0 +1,8 @@
+#
+# $Id: hbbtree.hbc 16868 2011-06-07 22:29:10Z vszakats $
+#
+
+incpaths=.
+libpaths=lib/${hb_plat}/${hb_comp}
+
+libs=${hb_name}

@@ -1,0 +1,119 @@
+/*
+ * $Id: QMainWindow.qth 16491 2011-03-22 00:26:54Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent, nFlags
+</CLASS>
+
+<CODE>
+#include <QtGui/QMainWindow>
+#include <QtCore/QSettings>
+
+
+/*
+ * QMainWindow ( QWidget * parent = 0, Qt::WindowFlags flags = 0 )
+ * ~QMainWindow ()
+ */
+HB_FUNC( QT_QMAINWINDOW )
+{
+   if( hb_pcount() <= 2 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QMainWindow( hbqt_par_QWidget( 1 ), ( Qt::WindowFlags ) ( HB_ISNUM( 2 ) ? hb_parni( 2 ) : 0 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QMainWindow() );
+   }
+}
+
+HB_FUNC( HBQT_QMAINWINDOW_SAVESETTINGS )
+{
+   QSettings qSet( hbqt_par_QString( 1 ), QSettings::IniFormat );
+
+   qSet.setValue( hbqt_par_QString( 2 ), hbqt_par_QMainWindow( 3 )->saveState() );
+}
+
+HB_FUNC( HBQT_QMAINWINDOW_RESTSETTINGS )
+{
+   QSettings qSet( hbqt_par_QString( 1 ), QSettings::IniFormat );
+
+   hbqt_par_QMainWindow( 3 )->restoreState( qSet.value( hbqt_par_QString( 2 ) ).toByteArray() );
+}
+</CODE>
+
+<ENUMS>
+enum DockOption { AnimatedDocks, AllowNestedDocks, AllowTabbedDocks, ForceTabbedDocks, VerticalTabs }
+flags DockOptions
+</ENUMS>
+
+<PROTOS>
+
+void addDockWidget ( Qt::DockWidgetArea area, QDockWidget * dockwidget )   [*D=2*]
+void addDockWidget ( Qt::DockWidgetArea area, QDockWidget * dockwidget, Qt::Orientation orientation )   [*D=2*]
+void addToolBar ( Qt::ToolBarArea area, QToolBar * toolbar )
+void addToolBar ( QToolBar * toolbar )
+QToolBar * addToolBar ( const QString & title )               // NOT implemented
+void addToolBarBreak ( Qt::ToolBarArea area = Qt::TopToolBarArea )
+QWidget * centralWidget () const
+Qt::DockWidgetArea corner ( Qt::Corner corner ) const
+virtual QMenu * createPopupMenu ()
+DockOptions dockOptions () const
+Qt::DockWidgetArea dockWidgetArea ( QDockWidget * dockwidget ) const
+bool documentMode () const
+QSize iconSize () const
+void insertToolBar ( QToolBar * before, QToolBar * toolbar )      [*D=2*]
+void insertToolBarBreak ( QToolBar * before )
+bool isAnimated () const
+bool isDockNestingEnabled () const
+QMenuBar * menuBar () const
+QWidget * menuWidget () const
+void removeDockWidget ( QDockWidget * dockwidget )
+void removeToolBar ( QToolBar * toolbar )
+void removeToolBarBreak ( QToolBar * before )
+bool restoreDockWidget ( QDockWidget * dockwidget )
+bool restoreState ( const QByteArray & state, int version = 0 )
+QByteArray saveState ( int version = 0 ) const
+void setCentralWidget ( QWidget * widget )                        [*D=1*]
+void setCorner ( Qt::Corner corner, Qt::DockWidgetArea area )
+void setDockOptions ( DockOptions options )
+void setDocumentMode ( bool enabled )
+void setIconSize ( const QSize & iconSize )
+void setMenuBar ( QMenuBar * menuBar )                            [*D=1*]
+void setMenuWidget ( QWidget * menuBar )                          [*D=1*]
+void setStatusBar ( QStatusBar * statusbar )                      [*D=1*]
+void setTabPosition ( Qt::DockWidgetAreas areas, QTabWidget::TabPosition tabPosition )
+void setTabShape ( QTabWidget::TabShape tabShape )
+void setToolButtonStyle ( Qt::ToolButtonStyle toolButtonStyle )
+void setUnifiedTitleAndToolBarOnMac ( bool set )
+void splitDockWidget ( QDockWidget * first, QDockWidget * second, Qt::Orientation orientation )
+QStatusBar * statusBar () const
+QTabWidget::TabPosition tabPosition ( Qt::DockWidgetArea area ) const
+QTabWidget::TabShape tabShape () const
+QList<QDockWidget *> tabifiedDockWidgets ( QDockWidget * dockwidget ) const
+void tabifyDockWidget ( QDockWidget * first, QDockWidget * second )
+Qt::ToolBarArea toolBarArea ( QToolBar * toolbar ) const
+bool toolBarBreak ( QToolBar * toolbar ) const
+Qt::ToolButtonStyle toolButtonStyle () const
+bool unifiedTitleAndToolBarOnMac () const
+</PROTOS>
+
+<SLOTS>
+void setAnimated ( bool enabled )
+void setDockNestingEnabled ( bool enabled )
+</SLOTS>
+
+<SIGNALS>
+void iconSizeChanged ( const QSize & iconSize )
+void toolButtonStyleChanged ( Qt::ToolButtonStyle toolButtonStyle )
+</SIGNALS>

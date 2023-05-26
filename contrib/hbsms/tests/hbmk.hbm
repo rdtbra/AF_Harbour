@@ -1,0 +1,7 @@
+#
+# $Id: hbmk.hbm 14643 2010-05-31 08:26:06Z druzus $
+#
+
+../hbsms.hbc
+
+-w3 -es2

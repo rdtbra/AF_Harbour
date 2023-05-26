@@ -1,0 +1,66 @@
+/*
+ * $Id: QGraphicsPathItem.qth 16683 2011-04-27 10:00:24Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherit  = QAbstractGraphicsShapeItem
+Type     =
+New      =
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsPathItem>
+
+
+/*
+ * QGraphicsPathItem ( QGraphicsItem * parent = 0 )
+ * QGraphicsPathItem ( const QPainterPath & path, QGraphicsItem * parent = 0 )
+ * ~QGraphicsPathItem ()
+ */
+HB_FUNC( QT_QGRAPHICSPATHITEM )
+{
+   if( hb_pcount() >= 1 && HB_ISOBJECT( 1 ) )
+   {
+      HBQT_GC_T * p = ( HBQT_GC_T * ) hbqt_par_ptr( 1 );
+      if( p->type == HBQT_TYPE_QPainterPath )
+      {
+         __HB_RETPTRGC__( new QGraphicsPathItem( *hbqt_par_QPainterPath( 1 ), ( HB_ISOBJECT( 2 ) ? hbqt_par_QGraphicsItem( 2 ) : 0 ) ) );
+      }
+      else
+      {
+         __HB_RETPTRGC__( new QGraphicsPathItem( hbqt_par_QGraphicsItem( 1 ) ) );
+      }
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QGraphicsPathItem() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QPainterPath path () const
+void setPath ( const QPainterPath & path )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

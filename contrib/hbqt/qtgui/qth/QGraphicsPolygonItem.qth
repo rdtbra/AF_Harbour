@@ -1,0 +1,68 @@
+/*
+ * $Id: QGraphicsPolygonItem.qth 16683 2011-04-27 10:00:24Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherit  = QAbstractGraphicsShapeItem
+Type     =
+New      =
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsPolygonItem>
+
+
+/*
+ * QGraphicsPolygonItem ( QGraphicsItem * parent = 0 )
+ * QGraphicsPolygonItem ( const QPolygonF & polygon, QGraphicsItem * parent = 0 )
+ * ~QGraphicsPolygonItem ()
+ */
+HB_FUNC( QT_QGRAPHICSPOLYGONITEM )
+{
+   if( hb_pcount() >= 1 && HB_ISOBJECT( 1 ) )
+   {
+      HBQT_GC_T * p = ( HBQT_GC_T * ) hbqt_par_ptr( 1 );
+      if( p->type == HBQT_TYPE_QPolygonF )
+      {
+         __HB_RETPTRGC__( new QGraphicsPolygonItem( *hbqt_par_QPolygonF( 1 ), ( HB_ISOBJECT( 2 ) ? hbqt_par_QGraphicsItem( 2 ) : 0 ) ) );
+      }
+      else
+      {
+         __HB_RETPTRGC__( new QGraphicsPolygonItem( hbqt_par_QGraphicsItem( 1 ) ) );
+      }
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QGraphicsPolygonItem() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+Qt::FillRule fillRule () const
+QPolygonF polygon () const
+void setFillRule ( Qt::FillRule rule )
+void setPolygon ( const QPolygonF & polygon )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

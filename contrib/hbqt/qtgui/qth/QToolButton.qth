@@ -1,0 +1,58 @@
+/*
+ * $Id: QToolButton.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractButton
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QToolButton>
+
+
+/*
+ * QToolButton ( QWidget * parent = 0 )
+ * ~QToolButton ()
+ */
+HB_FUNC( QT_QTOOLBUTTON )
+{
+   __HB_RETPTRGC__( new QToolButton( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum ToolButtonPopupMode { DelayedPopup, MenuButtonPopup, InstantPopup }
+</ENUMS>
+
+<PROTOS>
+Qt::ArrowType arrowType () const
+bool autoRaise () const
+QAction * defaultAction () const
+QMenu * menu () const
+ToolButtonPopupMode popupMode () const
+void setArrowType ( Qt::ArrowType type )
+void setAutoRaise ( bool enable )
+void setMenu ( QMenu * menu )
+void setPopupMode ( ToolButtonPopupMode mode )
+Qt::ToolButtonStyle toolButtonStyle () const
+</PROTOS>
+
+<SLOTS>
+void setDefaultAction ( QAction * action )
+void setToolButtonStyle ( Qt::ToolButtonStyle style )
+void showMenu ()
+</SLOTS>
+
+<SIGNALS>
+void triggered ( QAction * action )
+</SIGNALS>

@@ -1,0 +1,128 @@
+/*
+ * $Id: QTextDocument.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QObject
+Type     = Core
+New      =
+</CLASS>
+
+<CODE>
+#include <QtGui/QTextDocument>
+#include <QtGui/QTextBlock>
+#include <QtGui/QTextCursor>
+
+
+/*
+ * QTextDocument ( QObject * parent = 0 )
+ * QTextDocument ( const QString & text, QObject * parent = 0 )
+ * ~QTextDocument ()
+ */
+HB_FUNC( QT_QTEXTDOCUMENT )
+{
+   __HB_RETPTRGC__( new QTextDocument( hbqt_par_QObject( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum FindFlag { FindBackward, FindCaseSensitively, FindWholeWords }
+flags FindFlags
+enum MetaInformation { DocumentTitle, DocumentUrl }
+enum ResourceType { HtmlResource, ImageResource, StyleSheetResource, UserResource }
+</ENUMS>
+
+<PROTOS>
+void addResource ( int type, const QUrl & name, const QVariant & resource )
+void adjustSize ()
+QVector<QTextFormat> allFormats () const
+QTextBlock begin () const
+int blockCount () const
+QChar characterAt ( int pos ) const
+int characterCount () const
+virtual void clear ()
+QTextDocument * clone ( QObject * parent = 0 ) const
+QFont defaultFont () const
+QString defaultStyleSheet () const
+QTextOption defaultTextOption () const
+QAbstractTextDocumentLayout * documentLayout () const
+qreal documentMargin () const
+void drawContents ( QPainter * p, const QRectF & rect = QRectF() )
+QTextBlock end () const
+QTextCursor find ( const QString & subString, const QTextCursor & cursor, FindFlags options = 0 ) const
+QTextCursor find ( const QRegExp & expr, const QTextCursor & cursor, FindFlags options = 0 ) const
+QTextCursor find ( const QString & subString, int position = 0, FindFlags options = 0 ) const
+QTextCursor find ( const QRegExp & expr, int position = 0, FindFlags options = 0 ) const
+QTextBlock findBlock ( int pos ) const
+QTextBlock findBlockByLineNumber ( int lineNumber ) const
+QTextBlock findBlockByNumber ( int blockNumber ) const
+QTextBlock firstBlock () const
+qreal idealWidth () const
+qreal indentWidth () const
+bool isEmpty () const
+bool isModified () const
+bool isRedoAvailable () const
+bool isUndoAvailable () const
+bool isUndoRedoEnabled () const
+QTextBlock lastBlock () const
+int lineCount () const
+void markContentsDirty ( int position, int length )
+int maximumBlockCount () const
+QString metaInformation ( MetaInformation info ) const
+QTextObject * object ( int objectIndex ) const
+QTextObject * objectForFormat ( const QTextFormat & f ) const
+int pageCount () const
+QSizeF pageSize () const
+void print ( QPrinter * printer ) const
+void redo ( QTextCursor * cursor )
+QVariant resource ( int type, const QUrl & name ) const
+int revision () const
+QTextFrame * rootFrame () const
+void setDefaultFont ( const QFont & font )
+void setDefaultStyleSheet ( const QString & sheet )
+void setDefaultTextOption ( const QTextOption & option )
+void setDocumentLayout ( QAbstractTextDocumentLayout * layout )
+void setDocumentMargin ( qreal margin )
+void setHtml ( const QString & html )
+void setIndentWidth ( qreal width )
+void setMaximumBlockCount ( int maximum )
+void setMetaInformation ( MetaInformation info, const QString & string )
+void setPageSize ( const QSizeF & size )
+void setPlainText ( const QString & text )
+void setTextWidth ( qreal width )
+void setUndoRedoEnabled ( bool enable )
+void setUseDesignMetrics ( bool b )
+QSizeF size () const
+qreal textWidth () const
+QString toHtml ( const QByteArray & encoding = QByteArray() ) const
+QString toPlainText () const
+void undo ( QTextCursor * cursor )
+bool useDesignMetrics () const
+</PROTOS>
+
+<SLOTS>
+void redo ()
+void setModified ( bool m = true )
+void undo ()
+</SLOTS>
+
+<SIGNALS>
+void blockCountChanged ( int newBlockCount )
+void contentsChange ( int position, int charsRemoved, int charsAdded )
+void contentsChanged ()
+void cursorPositionChanged ( const QTextCursor & cursor )
+void documentLayoutChanged ()
+void modificationChanged ( bool changed )
+void redoAvailable ( bool available )
+void undoAvailable ( bool available )
+void undoCommandAdded ()
+</SIGNALS>

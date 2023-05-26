@@ -1,0 +1,19 @@
+#
+# $Id: hbnetio.hbp 16450 2011-03-09 19:05:21Z vszakats $
+#
+
+../../hbnetio.hbc
+-mt
+
+-w3 -es2 -l-
+
+-o${hb_name}
+
+netiosrv.prg
+netiocon.prg
+netiomgm.prg
+netiosvc.prg{win}
+-main=WinMain{win}
+hbwin.hbc{win}
+
+#-prgflag=-DHB_EXTERN

@@ -1,0 +1,10 @@
+;
+; $Id: hbolesrv.def 14605 2010-05-26 10:08:01Z vszakats $
+;
+
+EXPORTS
+DllGetClassObject       PRIVATE
+DllCanUnloadNow         PRIVATE
+DllRegisterServer       PRIVATE
+DllUnregisterServer     PRIVATE
+DllMain

@@ -1,0 +1,30 @@
+#
+# $Id: hbexpat.hbp 16634 2011-04-20 01:45:35Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_targetname}
+
+-w3 -es2
+
+-depkeyhead=expat:expat.h
+-depcontrol=expat:local{HB_BUILD_3RDEXT='no'}
+-depcontrol=expat:${HB_WITH_EXPAT}
+-depincpath=expat:/usr/include
+-depincpathlocal=expat:3rd/expat
+-depfinish=expat
+
+-instfile=inc:hbexpat.ch
+-instfile=inc:hbexpat.hbx
+
+-cflag=-DXML_STATIC
+
+hbexpat.hbx
+
+core.c
+internal.c
+unitable.prg
+
+3rd/expat/expat.hbc{HBMK_HAS_EXPAT_LOCAL}

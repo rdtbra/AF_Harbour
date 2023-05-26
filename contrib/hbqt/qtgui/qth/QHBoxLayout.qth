@@ -1,0 +1,32 @@
+/*
+ * $Id: QHBoxLayout.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QBoxLayout
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QHBoxLayout>
+
+
+/*
+ * QHBoxLayout ()
+ * QHBoxLayout ( QWidget * parent )
+ * ~QHBoxLayout ()
+ */
+HB_FUNC( QT_QHBOXLAYOUT )
+{
+   __HB_RETPTRGC__( new QHBoxLayout( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>

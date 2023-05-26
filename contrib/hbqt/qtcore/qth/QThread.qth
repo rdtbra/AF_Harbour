@@ -1,0 +1,66 @@
+/*
+ * $Id: QThread.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = 
+Inherits   = QObject
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtCore/QThread>
+
+
+/* QThread ( QObject * parent = 0 )
+ * ~QThread ()
+ */
+HB_FUNC( QT_QTHREAD )
+{
+   __HB_RETPTRGC__( new QThread() );
+}
+</CODE>
+
+<ENUMS>
+enum Priority { IdlePriority, LowestPriority, LowPriority, NormalPriority, ..., InheritPriority }
+</ENUMS>
+
+<PROTOS>
+void exit ( int returnCode = 0 )
+bool isFinished () const
+bool isRunning () const
+Priority priority () const
+void setPriority ( Priority priority )
+void setStackSize ( uint stackSize )
+uint stackSize () const
+#bool wait ( unsigned long time = ULONG_MAX )
+bool wait ( ulong time = ULONG_MAX )
+
+QThread * currentThread ()
+// Qt::HANDLE currentThreadId ()
+int idealThreadCount ()
+void yieldCurrentThread ()
+</PROTOS>
+
+<SLOTS>
+void quit ()
+void start ( Priority priority = InheritPriority )
+void terminate ()
+</SLOTS>
+
+<SIGNALS>
+void finished ()
+void started ()
+void terminated ()
+</SIGNALS>

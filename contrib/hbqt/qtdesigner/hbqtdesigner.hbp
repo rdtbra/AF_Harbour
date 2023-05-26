@@ -1,0 +1,11 @@
+#
+# $Id: hbqtdesigner.hbp 15793 2010-11-09 11:53:06Z druzus $
+#
+
+../hbqt_common.hbm
+
+hbqtdesigner.hbm
+
+-instfile=inc:hbqtdesigner.hbx
+
+hbqtdesigners.hbp

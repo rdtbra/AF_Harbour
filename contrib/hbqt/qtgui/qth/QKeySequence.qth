@@ -1,0 +1,70 @@
+/*
+ * $Id: QKeySequence.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = 
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QKeySequence>
+
+
+/*
+ * QKeySequence ()
+ * QKeySequence ( const QString & key )
+ * QKeySequence ( int k1, int k2 = 0, int k3 = 0, int k4 = 0 )
+ * QKeySequence ( const QKeySequence & keysequence )
+ * QKeySequence ( StandardKey key )
+ * ~QKeySequence ()
+ */
+HB_FUNC( QT_QKEYSEQUENCE )
+{
+   if( HB_ISOBJECT( 1 ) )
+      __HB_RETPTRGC__( new QKeySequence( *hbqt_par_QKeySequence( 1 ) ) );
+   else if( HB_ISCHAR( 1 ) )
+      __HB_RETPTRGC__( new QKeySequence( hbqt_par_QString( 1 ) ) );
+   else if( HB_ISNUM( 1 ) )
+      __HB_RETPTRGC__( new QKeySequence( hb_parni( 1 ) ) );
+   else
+      __HB_RETPTRGC__( new QKeySequence() );
+}
+</CODE>
+
+<ENUMS>
+enum SequenceFormat { NativeText, PortableText }
+enum SequenceMatch { NoMatch, PartialMatch, ExactMatch }
+enum StandardKey { AddTab, Back, Bold, Close, ..., ZoomOut }
+</ENUMS>
+
+<PROTOS>
+uint count () const
+bool isEmpty () const
+SequenceMatch matches ( const QKeySequence & seq ) const
+QString toString ( SequenceFormat format = PortableText ) const
+
+QKeySequence fromString ( const QString & str, SequenceFormat format = PortableText )
+QList<QKeySequence> keyBindings ( StandardKey key )
+QKeySequence mnemonic ( const QString & text )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

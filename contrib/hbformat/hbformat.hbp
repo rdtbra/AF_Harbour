@@ -1,0 +1,16 @@
+#
+# $Id: hbformat.hbp 16408 2011-03-01 11:56:20Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbformat.hbx
+
+hbformat.hbx
+
+hbfmtcls.prg

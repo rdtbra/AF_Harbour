@@ -1,0 +1,22 @@
+#
+# $Id: sddmy.hbp 15781 2010-11-08 00:40:00Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+../rddsql/rddsql.hbc
+
+-depkeyhead=mysql:mysql.h
+-depcontrol=mysql:no{HB_BUILD_3RDEXT='no'}
+-depcontrol=mysql:${HB_WITH_MYSQL}
+-depincpath=mysql:/usr/include/mysql
+-depincpath=mysql:/opt/local/include/mysql5/mysql
+-depimplibs=mysql:../lib/opt/libmySQL.dll
+-depimplibs=mysql:../lib/libmySQL.dll
+
+sddmy.c

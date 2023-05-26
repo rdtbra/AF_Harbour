@@ -1,0 +1,70 @@
+/*
+ * $Id: QMouseEvent.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QInputEvent
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QMouseEvent>
+
+
+/*
+ * QMouseEvent ( Type type, const QPoint & position, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers )
+ * QMouseEvent ( Type type, const QPoint & pos, const QPoint & globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers )
+ * ~QMouseEvent ()
+ */
+HB_FUNC( QT_QMOUSEEVENT )
+{
+   if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QMouseEvent( *hbqt_par_QMouseEvent( 1 ) ) );
+   }
+   else if( hb_pcount() == 5 )
+   {
+      __HB_RETPTRGC__( new QMouseEvent( ( QEvent::Type ) hb_parni( 1 ), *hbqt_par_QPoint( 2 ), ( Qt::MouseButton ) hb_parni( 3 ), ( Qt::MouseButtons ) hb_parni( 4 ), ( Qt::KeyboardModifiers ) hb_parni( 5 ) ) );  
+   }
+   else if( hb_pcount() == 6 )
+   {
+      __HB_RETPTRGC__( new QMouseEvent( ( QEvent::Type ) hb_parni( 1 ), *hbqt_par_QPoint( 2 ), *hbqt_par_QPoint( 3 ), ( Qt::MouseButton ) hb_parni( 4 ), ( Qt::MouseButtons ) hb_parni( 5 ), ( Qt::KeyboardModifiers ) hb_parni( 6 ) ) );  
+   }
+}
+</CODE>
+
+<ENUMS>
+enum Type { None, AccessibilityDescription, AccessibilityHelp, AccessibilityPrepare, ..., MaxUser }
+</ENUMS>
+
+<PROTOS>
+Qt::MouseButton button () const
+Qt::MouseButtons buttons () const
+const QPoint & globalPos () const
+int globalX () const
+int globalY () const
+const QPoint & pos () const
+QPointF posF () const
+int x () const
+int y () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

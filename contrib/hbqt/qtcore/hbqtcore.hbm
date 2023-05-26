@@ -1,0 +1,21 @@
+#
+# $Id: hbqtcore.hbm 16207 2011-02-05 09:16:09Z vszakats $
+#
+
+-i.
+
+qth/filelist.hbm
+
+hbqtcore.hbx
+
+hbqt_init.cpp
+hbqt_pointer.cpp
+hbqt_version.cpp
+
+hbqt_hbqevents.cpp
+hbqt_hbqslots.cpp
+hbqt_hbqstring.cpp
+
+hbqt_misc.prg
+
+hbqt_hbqevents.h

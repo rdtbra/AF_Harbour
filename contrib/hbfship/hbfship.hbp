@@ -1,0 +1,27 @@
+#
+# $Id: hbfship.hbp 16210 2011-02-05 10:05:46Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbfship.hbx
+
+hbfship.hbx
+
+fldarr.prg
+isdb.prg
+
+dbsetloc.c
+exec.c
+flddeci.c
+index.c
+isbegseq.c
+isfunc.c
+secondfs.c
+strpeek.c
+users.c

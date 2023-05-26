@@ -1,0 +1,52 @@
+/*
+ * $Id: QHttpResponseHeader.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = no
+Inherits   = QHttpHeader
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtNetwork/QHttpResponseHeader>
+
+
+/* QHttpResponseHeader ()
+ * QHttpResponseHeader ( const QHttpResponseHeader & header )
+ * QHttpResponseHeader ( const QString & str )
+ * QHttpResponseHeader ( int code, const QString & text = QString(), int majorVer = 1, int minorVer = 1 )
+ */
+HB_FUNC( QT_QHTTPRESPONSEHEADER )
+{
+   __HB_RETPTRGC__( new QHttpResponseHeader() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+virtual int majorVersion () const
+virtual int minorVersion () const
+QString reasonPhrase () const
+void setStatusLine ( int code, const QString & text = QString(), int majorVer = 1, int minorVer = 1 )
+int statusCode () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

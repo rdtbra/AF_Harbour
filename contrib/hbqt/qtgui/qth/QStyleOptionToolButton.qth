@@ -1,0 +1,60 @@
+/*
+ * $Id: QStyleOptionToolButton.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QStyleOptionComplex
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QStyleOptionToolButton>
+
+
+/*
+ * QStyleOptionToolButton ()
+ * QStyleOptionToolButton ( const QStyleOptionToolButton & other )
+ */
+HB_FUNC( QT_QSTYLEOPTIONTOOLBUTTON )
+{
+   __HB_RETPTRGC__( new QStyleOptionToolButton() );
+}
+</CODE>
+
+<ENUMS>
+enum StyleOptionType { Type }
+enum StyleOptionVersion { Version }
+enum ToolButtonFeature { None, Arrow, Menu, PopupDelay, HasMenu, MenuButtonPopup }
+flags ToolButtonFeatures
+</ENUMS>
+
+<PROTOS>
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+Qt::ArrowType arrowType
+ToolButtonFeatures features
+QFont font
+QIcon icon
+QSize iconSize
+QPoint pos
+QString text
+Qt::ToolButtonStyle toolButtonStyle
+</VARIABLES>

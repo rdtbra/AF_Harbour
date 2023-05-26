@@ -1,0 +1,65 @@
+/*
+ * $Id: QPoint.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Type     = PlainObject
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtCore/QPoint>
+
+
+/*
+ * QPoint ()
+ * QPoint ( const QPoint & point )
+ * QPoint ( int x, int y )
+ * ~QPoint ()
+ */
+HB_FUNC( QT_QPOINT )
+{
+   if( hb_pcount() == 2 && HB_ISNUM( 1 ) && HB_ISNUM( 2 ) )
+   {
+      __HB_RETPTRGC__( new QPoint( hb_parni( 1 ), hb_parni( 2 ) ) );
+   }
+   else if( hb_pcount() == 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QPoint( *hbqt_par_QPoint( 1 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QPoint() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+bool isNull () const
+int manhattanLength () const
+int & rx ()
+int & ry ()
+void setX ( int x )
+void setY ( int y )
+int x () const
+int y () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

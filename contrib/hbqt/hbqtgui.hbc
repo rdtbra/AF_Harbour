@@ -1,0 +1,10 @@
+#
+# $Id: hbqtgui.hbc 15274 2010-08-02 16:23:10Z vszakats $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+libs=qtgui/hbqtgui.hbc

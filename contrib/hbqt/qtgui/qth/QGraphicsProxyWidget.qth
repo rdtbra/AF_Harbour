@@ -1,0 +1,59 @@
+/*
+ * $Id: QGraphicsProxyWidget.qth 16442 2011-03-09 08:10:56Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = 
+Inherit  = QGraphicsWidget
+Type     = 
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsProxyWidget>
+
+
+/*
+ * QGraphicsProxyWidget ( QGraphicsItem * parent = 0, Qt::WindowFlags wFlags = 0 )
+ * ~QGraphicsProxyWidget ()
+ */
+HB_FUNC( QT_QGRAPHICSPROXYWIDGET )
+{
+   if( hb_pcount() >= 1 && HB_ISOBJECT( 1 ) )
+   {
+      __HB_RETPTRGC__( new QGraphicsProxyWidget( hbqt_par_QGraphicsItem( 1 ), ( Qt::WindowFlags ) ( HB_ISNUM( 2 ) ? hb_parni( 2 ) : 0 ) ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QGraphicsProxyWidget() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QGraphicsProxyWidget * createProxyForChildWidget ( QWidget * child )
+void setWidget ( QWidget * widget )
+QRectF subWidgetRect ( const QWidget * widget ) const
+QWidget * widget () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

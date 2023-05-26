@@ -1,0 +1,11 @@
+#
+# $Id: test.hbp 13613 2010-01-16 15:44:44Z april $
+#
+
+-q0
+
+-nulrdd
+
+-gtstd
+
+test.prg ttest.prg ctest.c

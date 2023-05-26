@@ -1,0 +1,52 @@
+/*
+ * $Id: QSound.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = 
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QSound>
+
+
+/*
+ * QSound ( const QString & filename, QObject * parent = 0 )
+ * ~QSound ()
+ */
+HB_FUNC( QT_QSOUND )
+{
+   __HB_RETPTRGC__( new QSound( hbqt_par_QString( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QString fileName () const
+bool isFinished () const
+int loops () const
+int loopsRemaining () const
+void setLoops ( int number )
+
+bool isAvailable ()
+void play ( const QString & filename )
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

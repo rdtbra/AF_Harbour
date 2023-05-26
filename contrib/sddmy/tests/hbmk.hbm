@@ -1,0 +1,7 @@
+#
+# $Id: hbmk.hbm 14222 2010-03-24 09:33:58Z vszakats $
+#
+
+../sddmy.hbc
+
+-w3 -es2

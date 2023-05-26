@@ -1,0 +1,16 @@
+#
+# $Id: hboslib.hbp 16852 2011-06-03 22:13:35Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hboslib.hbx
+
+hboslib.hbx
+
+core.prg

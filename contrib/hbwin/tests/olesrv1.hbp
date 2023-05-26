@@ -1,0 +1,11 @@
+#
+# $Id: olesrv1.hbp 14596 2010-05-25 23:44:42Z vszakats $
+#
+
+-hbdynvm
+
+../hbolesrv.hbc
+
+olesrv1.prg
+
+../../hbnetio/hbnetio.hbc

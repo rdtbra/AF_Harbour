@@ -1,0 +1,16 @@
+#
+# $Id: hbqt_commons.hbm 15323 2010-08-06 08:46:36Z vszakats $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+# Common settings for all hbqt subcomponents (static mode)
+
+-stop{!HB_QT_BUILD_STATIC|!allwin}
+
+hbqt_common.hbm
+
+-cflag=-DQT_NODLL

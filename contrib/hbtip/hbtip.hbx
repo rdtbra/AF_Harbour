@@ -1,0 +1,81 @@
+/*
+ * $Id: hbtip.hbx 16788 2011-05-19 02:34:16Z vszakats $
+ */
+
+/* -------------------------------------------------------------------- */
+/* NOTE: You can add manual override which functions to include or      */
+/*       exclude from automatically generated EXTERNAL/DYNAMIC list.    */
+/*          Syntax: // HB_FUNC_INCLUDE <func>                           */
+/*                  // HB_FUNC_EXCLUDE <func>                           */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* WARNING: Automatically generated code below. DO NOT EDIT!            */
+/*          Regenerate using hbmk2 '-hbx=' option.                      */
+/* -------------------------------------------------------------------- */
+
+#ifndef __HBEXTERN_CH__HBTIP__
+#define __HBEXTERN_CH__HBTIP__
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBTIP__ANNOUNCE )
+   ANNOUNCE __HBEXTERN__HBTIP__
+#endif
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBTIP__REQUEST )
+   #command DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+DYNAMIC ANSITOHTML
+DYNAMIC HB_BASE64
+DYNAMIC HB_MAILASSEMBLE
+DYNAMIC HB_SENDMAIL
+DYNAMIC HB_SETMIMETYPE
+DYNAMIC HTMLTOANSI
+DYNAMIC HTMLTOOEM
+DYNAMIC OEMTOHTML
+DYNAMIC THTMLCLEANUP
+DYNAMIC THTMLDOCUMENT
+DYNAMIC THTMLINIT
+DYNAMIC THTMLISVALID
+DYNAMIC THTMLITERATOR
+DYNAMIC THTMLITERATORREGEX
+DYNAMIC THTMLITERATORSCAN
+DYNAMIC THTMLNODE
+DYNAMIC THTMLTAGTYPE
+DYNAMIC TIPCGI
+DYNAMIC TIPCLIENT
+DYNAMIC TIPCLIENTFTP
+DYNAMIC TIPCLIENTHTTP
+DYNAMIC TIPCLIENTPOP
+DYNAMIC TIPCLIENTSMTP
+DYNAMIC TIPCREDENTIALS
+DYNAMIC TIPENCODER
+DYNAMIC TIPENCODERBASE64
+DYNAMIC TIPENCODERQP
+DYNAMIC TIPENCODERURL
+DYNAMIC TIPLOG
+DYNAMIC TIPMAIL
+DYNAMIC TIP_BASE64ENCODE
+DYNAMIC TIP_CHECKSID
+DYNAMIC TIP_CRLF
+DYNAMIC TIP_DATETOGMT
+DYNAMIC TIP_FILEMIMETYPE
+DYNAMIC TIP_GENERATESID
+DYNAMIC TIP_GETENCODER
+DYNAMIC TIP_GETNAMEEMAIL
+DYNAMIC TIP_GETRAWEMAIL
+DYNAMIC TIP_HTMLSPECIALCHARS
+DYNAMIC TIP_JSONSPECIALCHARS
+DYNAMIC TIP_MIMETYPE
+DYNAMIC TIP_SSL
+DYNAMIC TIP_TIMESTAMP
+DYNAMIC TIP_URLDECODE
+DYNAMIC TIP_URLENCODE
+DYNAMIC TURL
+DYNAMIC __TIP_PSTRCOMPI
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBTIP__REQUEST )
+   #uncommand DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+#endif

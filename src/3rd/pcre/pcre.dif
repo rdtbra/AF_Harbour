@@ -1,0 +1,33 @@
+diff -urN pcre.orig/pcrefinf.c pcre/pcrefinf.c
+--- pcre.orig/pcrefinf.c	2011-01-15 18:09:50.426241817 +0100
++++ pcre/pcrefinf.c	2011-01-15 18:09:50.696242981 +0100
+@@ -126,7 +126,7 @@
+   case PCRE_INFO_MINLENGTH:
+   *((int *)where) =
+     (study != NULL && (study->flags & PCRE_STUDY_MINLEN) != 0)?
+-      study->minlength : -1;
++      (int)study->minlength : -1;
+   break;
+ 
+   case PCRE_INFO_LASTLITERAL:
+diff -urN pcre.orig/pcreglob.c pcre/pcreglob.c
+--- pcre.orig/pcreglob.c	2011-01-15 18:09:50.446241418 +0100
++++ pcre/pcreglob.c	2011-01-15 18:09:50.696242981 +0100
+@@ -74,11 +74,17 @@
+ PCRE_EXP_DATA_DEFN int   (*pcre_callout)(pcre_callout_block *) = NULL;
+ 
+ #elif !defined VPCOMPAT
++#if defined( __cplusplus ) && !defined( __IBMCPP__ )
++extern "C" {
++#endif
+ PCRE_EXP_DATA_DEFN void *(*pcre_malloc)(size_t) = malloc;
+ PCRE_EXP_DATA_DEFN void  (*pcre_free)(void *) = free;
+ PCRE_EXP_DATA_DEFN void *(*pcre_stack_malloc)(size_t) = malloc;
+ PCRE_EXP_DATA_DEFN void  (*pcre_stack_free)(void *) = free;
+ PCRE_EXP_DATA_DEFN int   (*pcre_callout)(pcre_callout_block *) = NULL;
++#if defined( __cplusplus ) && !defined( __IBMCPP__ )
++}
++#endif
+ #endif
+ 
+ /* End of pcre_globals.c */

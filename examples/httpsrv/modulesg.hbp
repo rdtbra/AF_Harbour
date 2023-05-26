@@ -1,0 +1,6 @@
+#
+# $Id: modulesg.hbp 13467 2010-01-04 17:42:28Z vszakats $
+#
+
+@modules.hbp
+hbgd.hbc -DGD_SUPPORT

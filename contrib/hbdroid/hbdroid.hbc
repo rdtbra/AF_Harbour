@@ -1,0 +1,7 @@
+#
+# $Id: hbdroid.hbc 16671 2011-04-26 10:56:56Z vszakats $
+#
+
+incpaths=.
+
+libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}

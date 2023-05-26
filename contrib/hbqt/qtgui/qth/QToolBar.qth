@@ -1,0 +1,78 @@
+/*
+ * $Id: QToolBar.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QWidget
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QToolBar>
+#include <QtGui/QIcon>
+
+
+/* QToolBar ( const QString & title, QWidget * parent = 0 )
+ * QToolBar ( QWidget * parent = 0 )
+ * ~QToolBar ()
+ */
+HB_FUNC( QT_QTOOLBAR )
+{
+   if( hb_param( 1, HB_IT_STRING ) )
+      __HB_RETPTRGC__( new QToolBar( hbqt_par_QString( 1 ), hbqt_par_QWidget( 2 ) ) );
+   else
+      __HB_RETPTRGC__( new QToolBar( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<PROTOS>
+QAction * actionAt ( const QPoint & p ) const
+QAction * actionAt ( int x, int y ) const
+void addAction ( QAction * action )   [*D=1*]
+QAction * addAction ( const QString & text )
+QAction * addAction ( const QIcon & icon, const QString & text )
+QAction * addAction ( const QString & text, const QObject * receiver, const char * member )
+QAction * addAction ( const QIcon & icon, const QString & text, const QObject * receiver, const char * member )   [*D=3*]
+QAction * addSeparator ()
+QAction * addWidget ( QWidget * widget )
+Qt::ToolBarAreas allowedAreas () const
+void clear ()
+QSize iconSize () const
+QAction * insertSeparator ( QAction * before )
+QAction * insertWidget ( QAction * before, QWidget * widget )
+bool isAreaAllowed ( Qt::ToolBarArea area ) const
+bool isFloatable () const
+bool isFloating () const
+bool isMovable () const
+Qt::Orientation orientation () const
+void setAllowedAreas ( Qt::ToolBarAreas areas )
+void setFloatable ( bool floatable )
+void setMovable ( bool movable )
+void setOrientation ( Qt::Orientation orientation )
+QAction * toggleViewAction () const
+Qt::ToolButtonStyle toolButtonStyle () const
+QWidget * widgetForAction ( QAction * action ) const
+</PROTOS>
+
+<SLOTS>
+void setIconSize ( const QSize & iconSize )
+void setToolButtonStyle ( Qt::ToolButtonStyle toolButtonStyle )
+</SLOTS>
+
+<SIGNALS>
+void actionTriggered ( QAction * action )
+void allowedAreasChanged ( Qt::ToolBarAreas allowedAreas )
+void iconSizeChanged ( const QSize & iconSize )
+void movableChanged ( bool movable )
+void orientationChanged ( Qt::Orientation orientation )
+void toolButtonStyleChanged ( Qt::ToolButtonStyle toolButtonStyle )
+</SIGNALS>

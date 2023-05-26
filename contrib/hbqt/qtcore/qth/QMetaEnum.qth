@@ -1,0 +1,63 @@
+/*
+ * $Id: QMetaEnum.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = 
+New      =
+Constructor = No
+</CLASS>
+
+<SUBCLASS>
+</SUBCLASS>
+
+<DOC>
+</DOC>
+
+<CODE>
+#include <QtCore/QMetaEnum>
+
+
+/*
+ * QMetaEnum () 
+ * 
+ */
+HB_FUNC( QT_QMETAENUM )
+{
+   // __HB_RETPTRGC__( new QMetaEnum() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+bool isFlag () const
+bool isValid () const
+const char * key ( int index ) const
+int keyCount () const
+int keyToValue ( const char * key ) const
+int keysToValue ( const char * keys ) const
+const char * name () const
+const char * scope () const
+int value ( int index ) const
+const char * valueToKey ( int value ) const
+QByteArray valueToKeys ( int value ) const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

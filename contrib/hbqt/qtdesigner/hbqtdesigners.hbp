@@ -1,0 +1,7 @@
+#
+# $Id: hbqtdesigners.hbp 15288 2010-08-03 12:29:37Z vszakats $
+#
+
+../hbqt_commons.hbm
+
+hbqtdesigner.hbm

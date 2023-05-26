@@ -1,0 +1,17 @@
+#
+# $Id: hbqscintilla.hbm 16207 2011-02-05 09:16:09Z vszakats $
+#
+
+-i.
+
+qth/filelist.hbm
+
+hbqscintilla.hbx
+
+hbqt_init.cpp
+
+hbqt_hbqsciscintilla.cpp
+hbqt_hbqsciscintilla.h
+
+../qtcore/hbqtcore.hbc
+../qtgui/hbqtgui.hbc

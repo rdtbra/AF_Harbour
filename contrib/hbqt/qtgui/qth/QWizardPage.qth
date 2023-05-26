@@ -1,0 +1,62 @@
+/*
+ * $Id: QWizardPage.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject    = 
+Inherits   = QWidget
+Type       = Core
+New        =
+Destructor = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QWizardPage>
+
+
+/* QWizardPage ( QWidget * parent = 0 )
+ */
+HB_FUNC( QT_QWIZARDPAGE )
+{
+   __HB_RETPTRGC__( new QWizardPage() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QString buttonText ( QWizard::WizardButton which ) const
+virtual void cleanupPage ()
+virtual void initializePage ()
+bool isCommitPage () const
+virtual bool isComplete () const
+bool isFinalPage () const
+virtual int nextId () const
+QPixmap pixmap ( QWizard::WizardPixmap which ) const
+void setButtonText ( QWizard::WizardButton which, const QString & text )
+void setCommitPage ( bool commitPage )
+void setFinalPage ( bool finalPage )
+void setPixmap ( QWizard::WizardPixmap which, const QPixmap & pixmap )
+void setSubTitle ( const QString & subTitle )
+void setTitle ( const QString & title )
+QString subTitle () const
+QString title () const
+virtual bool validatePage ()
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+void completeChanged ()
+</SIGNALS>

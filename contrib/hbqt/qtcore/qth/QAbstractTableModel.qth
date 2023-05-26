@@ -1,0 +1,49 @@
+/*
+ * $Id: QAbstractTableModel.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherits = QAbstractItemModel
+Type     = Core
+New      = 
+Constructor = no
+</CLASS>
+
+<CODE>
+#include <QtCore/QAbstractTableModel>
+
+
+/*
+ * QAbstractTableModel ( QObject * parent = 0 )
+ * ~QAbstractTableModel ()
+ */
+HB_FUNC( QT_QABSTRACTTABLEMODEL )
+{
+   // __HB_RETPTRGC__( new QAbstractTableModel() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+virtual QModelIndex index ( int row, int column, const QModelIndex & parent = QModelIndex() ) const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

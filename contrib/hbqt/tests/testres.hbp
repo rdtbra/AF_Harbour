@@ -1,0 +1,8 @@
+#
+# $Id: testres.hbp 16600 2011-04-16 14:54:13Z vszakats $
+#
+
+@hbmk.hbm
+
+testres.prg
+testres.qrc

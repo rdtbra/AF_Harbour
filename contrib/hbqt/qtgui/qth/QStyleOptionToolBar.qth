@@ -1,0 +1,59 @@
+/*
+ * $Id: QStyleOptionToolBar.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits = QStyleOption
+Type     = Core
+New      = 
+</CLASS>
+
+<CODE>
+#include <QtGui/QStyleOptionToolBar>
+
+
+/*
+ * QStyleOptionToolBar ()
+ * QStyleOptionToolBar ( const QStyleOptionToolBar & other )
+ */
+HB_FUNC( QT_QSTYLEOPTIONTOOLBAR )
+{
+   __HB_RETPTRGC__( new QStyleOptionToolBar() );
+}
+</CODE>
+
+<ENUMS>
+enum StyleOptionType { Type }
+enum StyleOptionVersion { Version }
+enum ToolBarFeature { None, Movable }
+flags ToolBarFeatures
+enum ToolBarPosition { Beginning, Middle, End, OnlyOne }
+</ENUMS>
+
+<PROTOS>
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+ToolBarFeatures features
+int lineWidth
+int midLineWidth
+ToolBarPosition positionOfLine
+ToolBarPosition positionWithinLine
+Qt::ToolBarArea toolBarArea
+</VARIABLES>

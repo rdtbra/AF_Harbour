@@ -1,0 +1,59 @@
+/*
+ * $Id: plug_tpl.hbs 15170 2010-07-23 15:36:22Z vszakats $
+ */
+
+/*
+ * hbmk2 plugin example
+ *
+ * Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+ * www - http://harbour-project.org
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA (or visit
+ * their web site at http://www.gnu.org/).
+ *
+ */
+
+/* NOTE: Code must be written in reentrant way. IOW do not use
+         PUBLIC, PRIVATE and STATIC variables. Also do not use
+         temporary disk files with non-random names. [vszakats] */
+
+#pragma warninglevel=3
+
+FUNCTION hbmk2_plugin_tpl( hbmk2 )
+   LOCAL tmp
+
+   IF hbmk2[ "lTRACE" ]
+      hbmk2_OutStd( hbmk2, "@@ Entered plugin: " + hbmk2[ "cSTATE" ] )
+   ENDIF
+
+   SWITCH hbmk2[ "cSTATE" ]
+   CASE "pre_all"
+
+      FOR EACH tmp IN hbmk2[ "params" ]
+         hbmk2_OutStd( hbmk2, hb_StrFormat( "Parameter #%1$s: '%2$s'", hb_ntos( tmp:__enumIndex() ), tmp ) )
+      NEXT
+      EXIT
+
+   CASE "pre_c"
+      hbmk2[ "vars" ][ "MyVar" ] := "Hello world!"
+      EXIT
+
+   CASE "post_all"
+      hbmk2_OutStd( hbmk2, "POST_ALL: " + hbmk2[ "vars" ][ "MyVar" ] )
+      EXIT
+
+   ENDSWITCH
+
+   RETURN NIL

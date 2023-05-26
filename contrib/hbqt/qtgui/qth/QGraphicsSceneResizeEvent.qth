@@ -1,0 +1,52 @@
+/*
+ * $Id: QGraphicsSceneResizeEvent.qth 16418 2011-03-03 01:22:51Z vouchcac $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherit  = QGraphicsSceneEvent
+Type     = 
+New      = 
+Constructor =
+</CLASS>
+
+<CODE>
+#include <QtGui/QGraphicsSceneResizeEvent>
+#include <QtCore/QSizeF>
+
+
+/*
+ * QGraphicsSceneResizeEvent ()
+ * ~QGraphicsSceneResizeEvent ()
+ */
+HB_FUNC( QT_QGRAPHICSSCENERESIZEEVENT )
+{
+   __HB_RETPTRGC__( new QGraphicsSceneResizeEvent() );
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QSizeF newSize () const
+QSizeF oldSize () const
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>
+
+<VARIABLES>
+</VARIABLES>

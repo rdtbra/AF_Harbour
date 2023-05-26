@@ -1,0 +1,7 @@
+#
+# $Id: hbmk.hbm 13074 2009-11-30 19:33:57Z snaiperis $
+#
+
+../hbcairo.hbc
+
+-w3 -es2

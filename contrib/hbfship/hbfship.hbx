@@ -1,0 +1,51 @@
+/*
+ * $Id: hbfship.hbx 16227 2011-02-06 14:23:53Z vszakats $
+ */
+
+/* -------------------------------------------------------------------- */
+/* NOTE: You can add manual override which functions to include or      */
+/*       exclude from automatically generated EXTERNAL/DYNAMIC list.    */
+/*          Syntax: // HB_FUNC_INCLUDE <func>                           */
+/*                  // HB_FUNC_EXCLUDE <func>                           */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* WARNING: Automatically generated code below. DO NOT EDIT!            */
+/*          Regenerate using hbmk2 '-hbx=' option.                      */
+/* -------------------------------------------------------------------- */
+
+#ifndef __HBEXTERN_CH__HBFSHIP__
+#define __HBEXTERN_CH__HBFSHIP__
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBFSHIP__ANNOUNCE )
+   ANNOUNCE __HBEXTERN__HBFSHIP__
+#endif
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBFSHIP__REQUEST )
+   #command DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+DYNAMIC DBSETLOCATE
+DYNAMIC DBSETLOCATEBLOCK
+DYNAMIC EXECNAME
+DYNAMIC EXECPIDNUM
+DYNAMIC FIELDDECI
+DYNAMIC FIELDGETARR
+DYNAMIC FIELDPUTARR
+DYNAMIC INDEXCOUNT
+DYNAMIC INDEXNAMES
+DYNAMIC ISBEGSEQ
+DYNAMIC ISDBEXCL
+DYNAMIC ISDBFLOCK
+DYNAMIC ISDBRLOCK
+DYNAMIC ISFUNCTION
+DYNAMIC SECONDSCPU
+DYNAMIC STRPEEK
+DYNAMIC STRPOKE
+DYNAMIC USERSMAX
+
+#if defined( __HBEXTREQ__ ) .OR. defined( __HBEXTERN__HBFSHIP__REQUEST )
+   #uncommand DYNAMIC <fncs,...> => EXTERNAL <fncs>
+#endif
+
+#endif

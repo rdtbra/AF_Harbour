@@ -1,0 +1,208 @@
+/*
+ * $Id: cmpopt.txt 13729 2010-01-28 22:25:09Z druzus $
+ */
+
+Przemyslaw Czerpak (druzus/at/priv.onet.pl)
+Harbour compile time optimizations.
+
+1. Function call optimization.
+
+Just like Clipper Harbour compiler can optimize few function calls if
+parameters are well known constant values. Here is the list of functions
+optimized at compile time:
+
+   - Clipper compatible:
+
+      AT( <cConst1>, <cConst2> ) // Clipper wrongly calculates
+                                 // AT( "", <cConst> ) as 1
+      ASC( <cConst> [ , ... ] )
+      CHR( <nConst> )
+      LEN( <cConst> | <aConst> | <hConst> )  // <hConst> is Harbour extension
+      UPPER( <cConst> ) // <cConst> cannot contain characters different then
+                           [0-9A-Za-z ]
+
+   - Harbour extension:
+
+      INT( <nConst> )
+      MIN( <xConst1>, <xConst2> )   // <xConstN> is N, D or L value
+      MAX( <xConst1>, <xConst2> )   // <xConstN> is N, D or L value
+      EMPTY( <aConst> | <hConst> | <cConst> | <bConst> |
+             <nConst> | <dConst>| <lConst> | NIL )
+      CTOD( "" [ , ... ] )
+      DTOS( <dConst> ] )
+      STOD( [ <cConst> ] )
+      HB_STOD( [ <cConst> ] )
+      HB_STOT( [ <cConst> ] )
+      HB_BITNOT( <nConst> [, ... ] )
+      HB_BITAND( <nConst1>, <nConst2> [, <nConstN> ] )
+      HB_BITOR( <nConst1>, <nConst2> [, <nConstN> ] )
+      HB_BITXOR( <nConst1>, <nConst2> [, <nConstN> ] )
+      HB_BITTEST( <nConst1>, <nConst2> [, ... ] )
+      HB_BITSET( <nConst1>, <nConst2> [, ... ] )
+      HB_BITRESET( <nConst1>, <nConst2> [, ... ] )
+      HB_BITSHIFT( <nConst1>, <nConst2> [, ... ] )
+
+   - Harbour special functions:
+
+      HB_I18N_GETTEXT_NOOP( <cConst1> [ , <cConst2> ] )
+      HB_I18N_NGETTEXT_NOOP( <cConst1> | <acConst1> [ , <cConst2> ] )
+      HB_I18N_GETTEXT_NOOP_*( <cConst1> [ , <cConst2> ] )
+      HB_I18N_NGETTEXT_NOOP_*( <cConst1> | <acConst1> [ , <cConst2> ] )
+      HB_MUTEXCREATE()
+
+
+2. Expresion optimization:
+
+Just like Clipper Harbour compiler can optimize some expresions if
+arguments are well known and can be calculated at compile time:
+
+   - Clipper compatible:
+
+      <nConst1> + <nConst2>   => <nConst>
+      <nConst1> + <dConst2>   => <dConst>
+      <dConst1> + <nConst2>   => <dConst>
+      <cConst1> + <cConst2>   => <cConst>
+                                 // In Clipper neither <cConst1> nor <cConst2>
+                                 // can contain '&' character. Harbour checks
+                                 // if concatenation can change existing valid
+                                 // macro name or ignore '&' when -kM compiler
+                                 // switch which disable macro substitution
+                                 // is used
+      <nConst1> - <nConst2>   => <nConst>
+      <dConst1> - <dConst2>   => <dConst>
+      <dConst1> - <nConst2>   => <dConst>
+      <cConst1> - <cConst2>   => <cConst>
+                                 // In Clipper neither <cConst1> nor <cConst2>
+                                 // can contain '&' character. Harbour checks
+                                 // if concatenation can change existing valid
+                                 // macro name or ignore '&' when -kM compiler
+                                 // switch which disable macro substitution
+                                 // is used
+      <nConst1> * <nConst2>   => <nConst>
+      <nConst1> / <nConst2>   => <nConst> // Clipper optimize only integers
+      <nConst1> % <nConst2>   => <nConst>
+      <cConst1> $ <cConst2>   => <lConst>
+                                 // Clipper wrongly calculates
+                                 // "" $ <cConst> as .T.
+                                 // In Clipper neither <cConst1> nor <cConst2>
+                                 // can contain '&' character. Harbour checks
+                                 // if after '&' is potentially valid macro
+                                 // name or ignore '&' when -kM compiler switch
+                                 // which disable macro substitution is used
+      <lConst1> == <lConst2>  => <lConst>
+      <nConst1> == <nConst2>  => <lConst>
+      <dConst1> == <dConst2>  => <lConst>
+      <cConst1> == <cConst2>  => <lConst>
+                                 // In Clipper neither <cConst1> nor <cConst2>
+                                 // can contain '&' character. Harbour checks
+                                 // if after '&' is potentially valid macro
+                                 // name or ignore '&' when -kM compiler switch
+                                 // which disable macro substitution is used
+
+      NIL       == <xConst>   => <lConst>
+      <xConst>  == NIL        => <lConst>
+      <lConst1> = <lConst2>   => <lConst>
+      <nConst1> = <nConst2>   => <lConst>
+      <dConst1> = <dConst2>   => <lConst>
+      NIL       = <xConst>    => <lConst>
+      <xConst>  = NIL         => <lConst>
+      ""        = ""          => .T.
+      <lConst1> != <lConst2>  => <lConst>
+      <nConst1> != <nConst2>  => <lConst>
+      <dConst1> != <dConst2>  => <lConst>
+      NIL       != <xConst>   => <lConst>
+      <xConst>  != NIL        => <lConst>
+      ""        != ""         => .F.
+      <lConst1> >= <lConst2>  => <lConst>
+      <nConst1> >= <nConst2>  => <lConst>
+      <dConst1> >= <dConst2>  => <lConst>
+      <lConst1> <= <lConst2>  => <lConst>
+      <nConst1> <= <nConst2>  => <lConst>
+      <dConst1> <= <dConst2>  => <lConst>
+      <lConst1> > <lConst2>   => <lConst>
+      <nConst1> > <nConst2>   => <lConst>
+      <dConst1> > <dConst2>   => <lConst>
+      <lConst1> < <lConst2>   => <lConst>
+      <nConst1> < <nConst2>   => <lConst>
+      <dConst1> < <dConst2>   => <lConst>
+      .NOT. .T.               => .F.
+      .NOT. .F.               => .T.
+      <lConst1> .AND. <lConst2> => <lConst>
+      <lConst1> .OR. <lConst2> => <lConst>
+      IIF( .T., <expr1>, <expr2> ) => <expr1>
+      IIF( .F., <expr1>, <expr2> ) => <expr2>
+
+   - optimizations which can be disabled by -z compiler switch
+
+      .T. .AND. <expr>        => <expr>
+      <expr> .AND. .T.        => <expr>
+      .F. .OR. <expr>         => <expr>
+      <expr> .OR. .F.         => <expr>
+      .F. .AND. <expr>        => .F.
+      <expr> .AND. .F.        => .F.
+      .T. .OR. <expr>         => .T.
+      <expr> .OR. .T.         => .T.
+
+   - Harbour extension:
+
+      <nConst1> ^ <nConst2>   => <nConst>
+      <aValue> [ <nConst> ]   => <xArrayItem>
+      ( <expr> )              => <expr>         // it allows to optimize
+                                                // expresions like: 1+(2)
+
+   - Harbour extensions which may disable RT errors in wrong expressions
+     or can change used operators using basic math rules. Enabled by -ko
+     compiler switch:
+         .NOT. .NOT. <expr>      => <expr>
+         - -  <expr>             => <expr>
+         <expr> + 0              => <expr>
+         0 + <expr>              => <expr>
+         <expr> + ""             => <expr>
+         "" + <expr>             => <expr>
+         ( "<alias>" )->         => <alias>->
+
+     In cases when result is meaningless Harbour compiler can skip code
+     for operation, i.e. for such line of .prg code:
+         ( <exp1> <op> <exp2> )
+     where result of <op> operation is ignored Harbour reduces the code
+     to:
+         ( <exp1>, <exp2> )
+
+In Clipper in some places optimization is not enabled, f.e. Clipper
+does not optimize <exp> in expressions like:
+   <exp> : msg( ... )
+Unlike Clipper Harbour tries to optimize all expressions.
+
+If some code needs strict Clipper behavior then it can be forced by using
+-kc Harbour compiler switch. It disables Harbour extensions and enables
+replicating some Clipper bugs like optimizing "" $ <cConst> to .T. at
+compile time (at runtime and in macrocompiler it's always .F. in Clipper
+and Harbour).
+
+Expressions fully optimized to constant values at compile time can be used
+to intialize static variables, f.e.:
+   static s_var := ( 1 + 2 / 3 )
+
+Clipper does not optimize expression used in LOCAL, PRIVATE and
+PUBLIC variables declarations but it optimize expressions for STATIC
+declarations. This code illustrates it:
+
+   proc main()
+      memvar v, p
+      local l := "" $ ""
+      static s := "" $ ""
+      private v := "" $ ""
+      public p := "" $ ""
+      ? l, s, v, p, "" $ ""
+   return
+
+This behavior is not replicated in Harbour even if -kc switch is used
+and Harbour optimize expressions in all declarations.
+
+Harbour has additional optimization phase which operates on generated PCODE.
+It can also reduce expressions, joins jumps, removes death or meaningless
+code which can appear after all other optimizations and were not optimized
+by expression optimizer. It can also optimize readonly local variables
+keeping the QSelf() value. QSelf() is not real function call but very fast
+single PCODE often used in OOP code. Harbour can replace local variables
+keeping it by direct QSelf() usage.

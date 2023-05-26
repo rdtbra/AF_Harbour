@@ -1,0 +1,16 @@
+#
+# $Id: hbmemio.hbp 16634 2011-04-20 01:45:35Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+-instfile=inc:hbmemio.hbx
+
+hbmemio.hbx
+
+memio.c

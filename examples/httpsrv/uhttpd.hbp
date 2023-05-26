@@ -1,0 +1,7 @@
+#
+# $Id: uhttpd.hbp 14721 2010-06-09 21:38:32Z vszakats $
+#
+
+-mt -gui uhttpd.prg cgifunc.prg cookie.prg session.prg
+
+-l{win}hbwin

@@ -1,0 +1,10 @@
+#
+# $Id: QtNetwork.txt 15744 2010-11-04 11:21:17Z vszakats $
+#
+
+QFtp
+QHttp
+QHttpHeader
+QHttpRequestHeader
+QHttpResponseHeader
+QNetworkRequest

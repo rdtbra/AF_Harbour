@@ -1,0 +1,13 @@
+#
+# $Id: hbapollo.hbc 14687 2010-06-04 11:08:35Z vszakats $
+#
+
+{dos}skip=yes
+
+incpaths=.
+libpaths=lib/${hb_plat}/${hb_comp}
+
+libs=${hb_name}
+
+libs={win&&HB_WITH_APOLLO_VER61}sde61
+libs={win&&!HB_WITH_APOLLO_VER61}sde7

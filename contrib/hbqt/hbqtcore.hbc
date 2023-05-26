@@ -1,0 +1,10 @@
+#
+# $Id: hbqtcore.hbc 15256 2010-08-01 17:42:29Z vszakats $
+#
+
+# ---------------------------------------------------------------
+# Copyright 2010 Viktor Szakats (harbour.01 syenar.hu)
+# See COPYING for licensing terms.
+# ---------------------------------------------------------------
+
+libs=qtcore/hbqtcore.hbc

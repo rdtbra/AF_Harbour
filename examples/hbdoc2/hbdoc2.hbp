@@ -1,0 +1,20 @@
+#
+# $Id: hbdoc2.hbp 15108 2010-07-15 05:14:56Z vszakats $
+#
+
+-w3 -es2 -l
+
+-o${hb_name}
+
+-nulrdd
+
+-gtcgi
+
+hbdoc2.prg
+
+gentpl.prg
+gentxt.prg
+genhtml.prg
+genxml.prg
+
+tmplates.prg

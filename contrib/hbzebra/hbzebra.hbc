@@ -1,0 +1,7 @@
+#
+# $Id: hbzebra.hbc 15816 2010-11-12 00:59:49Z vszakats $
+#
+
+incpaths=.
+
+libs=${hb_name}

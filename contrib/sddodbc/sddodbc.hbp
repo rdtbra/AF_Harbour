@@ -1,0 +1,23 @@
+#
+# $Id: sddodbc.hbp 16687 2011-04-28 10:57:42Z vszakats $
+#
+
+-hblib
+-inc
+
+-o${hb_name}
+
+-w3 -es2
+
+../rddsql/rddsql.hbc
+
+-stop{dos|os2|rsxnt}
+
+-depkeyhead=odbc:sql.h
+-depcontrol=odbc:no{!allwin&&HB_BUILD_3RDEXT='no'}
+-depcontrol=odbc:${HB_WITH_ODBC}{!allwin}
+-depcontrol=odbc:force{allwin&!msvcarm}
+-depincpath=odbc:/usr/include
+-depincpath=odbc:/usr/local/include
+
+sddodbc.c

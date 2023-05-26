@@ -1,0 +1,19 @@
+#
+# $Id: filelist.hbm 16660 2011-04-24 08:11:16Z vszakats $
+#
+
+-pflag=-qtver=0x040500
+-pflag=-qtmodule=qtsql
+-pflag=-qthdocdir=../doc/
+
+QSqlDatabase.qth
+QSqlDriver.qth
+QSqlError.qth
+QSqlField.qth
+QSqlIndex.qth
+QSqlQuery.qth
+QSqlQueryModel.qth
+QSqlRecord.qth
+QSqlRelationalTableModel.qth
+QSqlResult.qth
+QSqlTableModel.qth

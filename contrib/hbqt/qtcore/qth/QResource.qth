@@ -1,0 +1,133 @@
+/*
+ * $Id: QResource.qth 16683 2011-04-27 10:00:24Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+QObject  = no
+Inherits =
+Type     = Core
+New      =
+ClubMethods = no
+</CLASS>
+
+<CODE>
+#include <QtCore/QResource>
+
+
+/*
+ * QResource ()
+ * QResource ( const QString & file = QString(), const QLocale & locale = QLocale() )
+ * ~QResource ()
+ */
+HB_FUNC( QT_QRESOURCE )
+{
+   if( hb_pcount() >= 1 && HB_ISCHAR( 1 ) )
+   {
+      __HB_RETPTRGC__( new QResource( hbqt_par_QString( 1 ), HB_ISOBJECT( 2 ) ? *hbqt_par_QLocale( 2 ) : QLocale() ) );
+   }
+   else
+   {
+      __HB_RETPTRGC__( new QResource() );
+   }
+}
+</CODE>
+
+<ENUMS>
+</ENUMS>
+
+<PROTOS>
+QString absoluteFilePath () const
+const uchar * data () const
+QString fileName () const
+bool isCompressed () const
+bool isValid () const
+QLocale locale () const
+void setFileName ( const QString & file )
+void setLocale ( const QLocale & locale )
+qint64 size () const
+
+bool registerResource ( const QString & rccFileName, const QString & mapRoot = QString() ) {
+   QResource * _resource = ( QResource * ) hbqt_par_ptr( 0 );
+   if( _resource )
+   {
+      int pcount = hb_pcount();
+      if( pcount <= 2 && HB_ISCHAR( 1 ) && ( pcount < 2 || HB_ISCHAR( 2 ) ) )
+      {
+         void * pText1 = NULL;
+         void * pText2 = NULL;
+         hb_retl( _resource->registerResource( hb_parstr_utf8( 1, &pText1, NULL ), hb_parstr_utf8( 2, &pText2, NULL ) ) );
+         hb_strfree( pText1 );
+         hb_strfree( pText2 );
+      }
+      else
+         hb_errRT_BASE( EG_ARG, 9999, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );
+   }
+}
+
+bool registerResource_1 ( const uchar * rccData, const QString & mapRoot = QString() ) {
+   QResource * _resource = ( QResource * ) hbqt_par_ptr( 0 );
+   if( _resource )
+   {
+      int pcount = hb_pcount();
+      if( pcount <= 2 && HB_ISCHAR( 1 ) && ( pcount < 2 || HB_ISCHAR( 2 ) ) )
+      {
+         void * pText = NULL;
+         hb_retl( _resource->registerResource( ( const uchar * ) hb_parc( 1 ), hb_parstr_utf8( 2, &pText, NULL ) ) );
+         hb_strfree( pText );
+      }
+      else
+         hb_errRT_BASE( EG_ARG, 9999, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );
+   }
+}
+
+QStringList searchPaths ()
+
+bool unregisterResource ( const QString & rccFileName, const QString & mapRoot = QString() ) {
+   QResource * _resource = ( QResource * ) hbqt_par_ptr( 0 );
+   if( _resource )
+   {
+      int pcount = hb_pcount();
+      if( pcount <= 2 && HB_ISCHAR( 1 ) && ( pcount < 2 || HB_ISCHAR( 2 ) ) )
+      {
+         void * pText1 = NULL;
+         void * pText2 = NULL;
+         hb_retl( _resource->unregisterResource( hb_parstr_utf8( 1, &pText1, NULL ), hb_parstr_utf8( 2, &pText2, NULL ) ) );
+         hb_strfree( pText1 );
+         hb_strfree( pText2 );
+      }
+      else
+         hb_errRT_BASE( EG_ARG, 9999, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );
+   }
+}
+
+bool unregisterResource_1 ( const uchar * rccData, const QString & mapRoot = QString() ) {
+   QResource * _resource = ( QResource * ) hbqt_par_ptr( 0 );
+   if( _resource )
+   {
+      int pcount = hb_pcount();
+      if( pcount <= 2 && HB_ISCHAR( 1 ) && ( pcount < 2 || HB_ISCHAR( 2 ) ) )
+      {
+         void * pText = NULL;
+         hb_retl( _resource->unregisterResource( ( const uchar * ) hb_parc( 1 ), hb_parstr_utf8( 2, &pText, NULL ) ) );
+         hb_strfree( pText );
+      }
+      else
+         hb_errRT_BASE( EG_ARG, 9999, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );
+   }
+}
+</PROTOS>
+
+<SLOTS>
+</SLOTS>
+
+<SIGNALS>
+</SIGNALS>

@@ -1,0 +1,8 @@
+#
+# $Id: dlg.hbp 16463 2011-03-10 20:00:37Z vszakats $
+#
+
+dlg.prg
+dlg.rc
+
+-gtgui

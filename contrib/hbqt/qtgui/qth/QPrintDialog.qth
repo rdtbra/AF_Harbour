@@ -1,0 +1,55 @@
+/*
+ * $Id: QPrintDialog.qth 15742 2010-11-04 04:19:36Z vszakats $
+ */
+
+/*
+ * Harbour Qt wrapper generator control file
+ *
+ * Copyright 2009-2010 Pritpal Bedi <bedipritpal@hotmail.com>
+ * www - http://www.harbour-project.org
+ *
+ * See COPYING for licensing terms.
+ */
+
+<CLASS>
+Inherit  = QAbstractPrintDialog
+New      = pParent
+</CLASS>
+
+<CODE>
+#include <QtGui/QPrintDialog>
+
+
+/*
+ * QPrintDialog ( QPrinter * printer, QWidget * parent = 0 )
+ * QPrintDialog ( QWidget * parent = 0 )
+ * ~QPrintDialog ()
+ */
+HB_FUNC( QT_QPRINTDIALOG )
+{
+   __HB_RETPTRGC__( new QPrintDialog ( hbqt_par_QWidget( 1 ) ) );
+}
+</CODE>
+
+<ENUMS>
+enum PrintDialogOption
+flags PrintDialogOptions
+</ENUMS>
+
+<PROTOS>
+// void addButton ( QPushButton * button )
+virtual void done ( int result )
+void open ( QObject * receiver, const char * member )
+PrintDialogOptions options () const
+//QPrinter * printer () const
+QPrinter * printer ()
+void setOption ( PrintDialogOption option, bool on = true )
+void setOptions ( PrintDialogOptions options )
+// void setPrinter ( QPrinter * printer, bool pickupSettings = false )
+virtual void setVisible ( bool visible )
+bool testOption ( PrintDialogOption option ) const
+</PROTOS>
+
+<SIGNALS>
+void accepted ( QPrinter * printer )
+</SIGNALS>

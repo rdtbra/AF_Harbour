@@ -1,0 +1,9 @@
+#
+# $Id: hbtip.hbc 16259 2011-02-09 15:58:45Z vszakats $
+#
+
+incpaths=.
+
+{!HB_TIP_OPENSSL|dos}libs=${_HB_DYNPREF}${hb_name}${_HB_DYNSUFF}
+{HB_TIP_OPENSSL&!dos}libs=${_HB_DYNPREF}${hb_name}ssl${_HB_DYNSUFF}
+{HB_TIP_OPENSSL&!dos}libs=../hbssl/hbssl.hbc
