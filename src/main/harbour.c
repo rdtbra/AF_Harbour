@@ -125,6 +125,7 @@ const char * hb_verHB_COMP( void )
 #endif
 
 int main( int argc, char * argv[] )
+/* RDT: 20230626 - Aqui é o ponto de partida do compilador. */
 {
    int iResult;
 
