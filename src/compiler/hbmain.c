@@ -58,7 +58,9 @@ static int hb_compCompile( HB_COMP_DECL, const char * szPrg, const char * szBuff
 static HB_BOOL hb_compRegisterFunc( HB_COMP_DECL, PFUNCTION pFunc, HB_BOOL fError );
 
 /* ************************************************************************* */
-
+/*
+ * RDT: 20250816 - Verdadeiro ponto de entrada do compilador.
+ */
 int hb_compMainExt( int argc, const char * const argv[],
                     HB_BYTE ** pBufPtr, HB_SIZE * pnSize,
                     const char * szSource,
@@ -132,13 +134,16 @@ int hb_compMainExt( int argc, const char * const argv[],
       hb_compIdentifierOpen( HB_COMP_PARAM );
    }
 
+   /* RDT: 20250816 - Supondo que szSource tenha sido extraída das funções de check de switches. */
    if( szSource )
    {
       bAnyFiles = HB_TRUE;
+      /* RDT: 20250816 - Compilar o código fonte passado como parâmetro = szSource. */
       iStatus = hb_compCompile( HB_COMP_PARAM, "{SOURCE}", szSource );
    }
    else
    {
+      /* RDT: 20250816 - Uma lista de códigos fonte foi passada por linha de comando. ₢*/
       /* Process all files passed via the command line. */
       for( i = 1; i < argc && !HB_COMP_PARAM->fExit; i++ )
       {
@@ -178,6 +183,9 @@ int hb_compMainExt( int argc, const char * const argv[],
    return iStatus;
 }
 
+/*
+ * RDT: 20250816 - Ponto de entrada do código.
+ */
 int hb_compMain( int argc, const char * const argv[] )
 {
    return hb_compMainExt( argc, argv, NULL, NULL, NULL, NULL, NULL );
@@ -4052,12 +4060,15 @@ static void hb_compRestoreSwitches( HB_COMP_DECL, PHB_COMP_SWITCHES pSwitches )
 }
 
 static int hb_compCompile( HB_COMP_DECL, const char * szPrg, const char * szBuffer )
+/*
+ * RDT: 20250816 - Função que inicia a compilação de um código fonte.
+ */
 {
    char buffer[ HB_PATH_MAX * 2 + 80 ];
    HB_COMP_SWITCHES switches;
    int iStatus = EXIT_SUCCESS;
    PHB_FNAME pFileName = NULL;
-   PHB_MODULE pModule;
+   PHB_MODULE pModule;₢
    HB_BOOL fGenCode = HB_TRUE;
 
    HB_TRACE(HB_TR_DEBUG, ("hb_compCompile(%s,%p)", szPrg, szBuffer));
